@@ -91,3 +91,11 @@ a.site-header:hover{
 
 }
 
+.col-border {
+    border-bottom: solid 1px lightgrey;
+}
+
+.col-table-padding {
+    padding-bottom: 18px;
+}
+
