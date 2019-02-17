@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/sidebarStyle.css">
 
-
     <!-- fonts -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
@@ -30,7 +29,10 @@
                         <a href="game-objective.html" class="list-group-item list-group-item-action bg-light">Objective</a>
                         <a href="card-description.html" class="list-group-item list-group-item-action bg-light">Card Description</a>
                         <a href="game-setup.html" class="list-group-item list-group-item-action bg-light">Setup</a>
-                        <a href="game-play.html" class="list-group-item list-group-item-action bg-light bar-active">Gameplay</a>
+                        <a href="game-play.html" class="list-group-item list-group-item-action bg-light
+                        bar-active">Gameplay</a>
+                        <a href="game-special-events.html" class="list-group-item list-group-item-action bg-light">Special Events</a>
+                        <a href="game-scoring.html" class="list-group-item list-group-item-action bg-light">Scoring</a>
                         <a href="#" class="list-group-item list-group-item-action bg-light">Special Rules</a>
                     </div>
                 </div>
@@ -129,32 +131,50 @@
                                         </div>
                         
                                     </div>
-                                    <div class="container">
-                                                    <h5>(SOMTIMES) EXTORTING</h5>
-                                                        <ul>
-                                                            <li>The player may extort one or more of the opponent's pi cards if one or a combination of the below special events occur:</li>
+
+                    
+                    
+                                    <div style="display:none;"><img id="source" src="./assets/_back.svg"></div>
+
+                                    <!-- sometimes section -->
+                                    <a class="section-heading-click" data-toggle="collapse" role="button" href="#additionalStepsSection" aria-expanded="false" aria-controls="additionalStepsSection">
+                                            <div class="d-flex flex-row section-row">
+                                                <div class="p-2"><h5 class="card-subtitle section-heading">(Sometimes) Additional Steps</h5></div>
+                                                <div class="p-2 ml-auto">
+                                                    <i class="fas fa-chevron-circle-down fa-2x"></i>
+                                                </div>
+                                            </div>
+                                        </a>
+                        
+                                        <div class="collapse p-2" id="additionalStepsSection">
+                                                <div class="container">
+                                                        <h5>(SOMTIMES) EXTORTING</h5>
                                                             <ul>
-                                                                <li>After placing a bomb</li>
-                                                                <li>Collecting ppuk</li>
-                                                                <li>Collecting ja-ppuk</li>
-                                                                <li>Sseul</li>
-                                                                <li>Ttadak</li>
-                                                                <li>Jjok</li>
-                                                            </ul>
-                                                            <br>
-                                                            <p><span class="text-italicize">Special Notes</span>: 
+                                                                <li>The player may extort one or more of the opponent's pi cards if one or a combination of the below special events occur:</li>
                                                                 <ul>
-                                                                    <li>If a combination of above events to occur, the number of cards to extort will accumulate.</li>
-                                                                    <li>If the opponent player does not have no or too few pi cards, the current player will only extort however many pi cards that the opponent has at the time.</li>
-                                                                    <li>There is no sense of giving "change." If the current player is to extort one pi but if the opponent has one ssangpi, the current player will still extort the ssangpi without giving one pi back.</li>
+                                                                    <li>After placing a bomb</li>
+                                                                    <li>Collecting ppuk</li>
+                                                                    <li>Collecting ja-ppuk</li>
+                                                                    <li>Sseul</li>
+                                                                    <li>Ttadak</li>
+                                                                    <li>Jjok</li>
                                                                 </ul>
-                        
-                                                            </p>
-                        
-                        
-                                                        </ul>
-                        
-                                                    <li>(SOMETIMES) CALLING "GO" OR "STOP"</li>
+                                                                <br>
+                                                                <p><span class="text-italicize">Special Notes</span>: 
+                                                                    <ul>
+                                                                        <li>If a combination of above events to occur, the number of cards to extort will accumulate.</li>
+                                                                        <li>If the opponent player does not have no or too few pi cards, the current player will only extort however many pi cards that the opponent has at the time.</li>
+                                                                        <li>There is no sense of giving "change." If the current player is to extort one pi but if the opponent has one ssangpi, the current player will still extort the ssangpi without giving one pi back.</li>
+                                                                    </ul>
+                            
+                                                                </p>
+                            
+                            
+                                                            </ul>
+                                                    </div>
+                                                    <br>
+                                            <div class="container">
+                                                <h5>(SOMETIMES) CALLING "GO" OR "STOP"</h5>
                                                         <ul>
                                                             <li>If the player reaches the required minimum number of points, then they can take one of the following actions</li>
                                                             <ol start="a">
@@ -170,417 +190,12 @@
                                                             </p>
                         
                                                         </ul>
+                                                    </div>
+
                         
-                                    </div>
-                    
-                    
-                                    <div style="display:none;"><img id="source" src="./assets/_back.svg"></div>
-                    
-                    
-                                    <!-- scoring section -->
-                                    <a class="section-heading-click" data-toggle="collapse" role="button" href="#scoringSection" aria-expanded="false" aria-controls="scoringSection">
-                                        <div class="d-flex flex-row section-row">
-                                            <div class="p-2"><h5 class="card-subtitle section-heading">Scoring</h5></div>
-                                            <div class="p-2 ml-auto">
-                                                <i class="fas fa-chevron-circle-down fa-2x"></i>
-                                            </div>
-                                        </div>
-                                    </a>
-                    
-                                    <div class="collapse p-2" id="scoringSection">
-                                        <p>This section explains how to calculate the points.</p>
-                                        
-                                        <h5 class="card-subtitle">Calculating Base Score</h5>
-                    
-                                        <h6 class="card-subtitle text-italicize">Card Scores</h6>
-                                        <!-- begin accordion  -->
-                                        <div class="accordion" id="baseScoreAccordion">
-                    
-                                            <!-- kwang score card -->
-                                            <div class="card">
-                                                <div class="card-header card-header-shrink" id="kwangScoreHeader">
-                                                    <h5 class="mb-0">
-                                                        <button class="btn btn-expand" type="button" data-toggle="collapse" data-target="#kwangScoreCollapse" aria-expanded="false" aria-controls="kwangScoreCollapse">
-                                                          Kwang
-                                                        </button>
-                                                    </h5>
-                                                </div>
-                    
-                                                <div id="kwangScoreCollapse" class="collapse false" aria-labelledby="kwangScoreHeader" data-parent="#baseScoreAccordion">
-                                                    <div class="card-body">
-                                                        <p>Kwang cards are calculated as follows: </p>
-                                                        <ul>
-                                                            <li>A combination of at least 3 kwang cards extra adds the points values described below.</li>
-                                                        </ul>
-                                                        
-                                                        <!-- table heading row -->
-                                                        <div class="d-flex flex-row">
-                                                            <div class="col-4">Description & Points</div>
-                                                            <div class="col">Example</div>
-                                                            
-                                                        </div>
-                    
-                                                        <div class="d-flex flex-row">
-                                                            <div class="col-4">
-                                                                <p>3 kwang <span class="text-italicize">with</span> Decmber kwang</p>
-                                                                <p><b>2 Points</b></p>
-                                                            </div>
-                                                            <div class="col">
-                                                                <img class="hwatu-img-med" src="assets/converted/_1_1.svg">
-                                                                <img class="hwatu-img-med" src="assets/converted/_3_1.svg">
-                                                                <img class="hwatu-img-med" src="assets/converted/_12_1.svg">
-                                                            </div>
-                                                        </div>
-                                                        <br>
-                    
-                                                        <div class="d-flex flex-row">
-                                                            <div class="col-4">
-                                                                <p>3 kwang <span class="text-italicize">without</span> Decmber kwang</p>
-                                                                <p><b>3 Points</b></p>
-                                                            </div>
-                                                            <div class="col">
-                                                                <img class="hwatu-img-med" src="assets/converted/_1_1.svg">
-                                                                <img class="hwatu-img-med" src="assets/converted/_3_1.svg">
-                                                                <img class="hwatu-img-med" src="assets/converted/_8_1.svg">
-                                                            </div>
-                                                        </div>
-                                                        <br>
-                    
-                                                        <div class="d-flex flex-row">
-                                                            <div class="col-4">
-                                                                <p>4 kwang (any combination)</p>
-                                                                <p><b>4 Points</b></p>
-                                                            </div>
-                                                            <div class="col">
-                                                                <img class="hwatu-img-med" src="assets/converted/_1_1.svg">
-                                                                <img class="hwatu-img-med" src="assets/converted/_3_1.svg">
-                                                                <img class="hwatu-img-med" src="assets/converted/_11_1.svg">
-                                                                <img class="hwatu-img-med" src="assets/converted/_12_1.svg">
-                                                            </div>
-                                                        </div>
-                                                        <br>
-                    
-                                                        <div class="d-flex flex-row">
-                                                            <div class="col-4">
-                                                                <p>5 kwang (i.e. all the kwang cards)</p>
-                                                                <p><b>15 Points</b></p>
-                                                            </div>
-                                                            <div class="col">
-                                                                <img class="hwatu-img-med" src="assets/converted/_1_1.svg">
-                                                                <img class="hwatu-img-med" src="assets/converted/_3_1.svg">
-                                                                <img class="hwatu-img-med" src="assets/converted/_8_1.svg">
-                                                                <img class="hwatu-img-med" src="assets/converted/_11_1.svg">
-                                                                <img class="hwatu-img-med" src="assets/converted/_12_1.svg">
-                                                            </div>
-                                                        </div>
-                    
-                    
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                    
-                                            <!-- yeol score card -->
-                                            <div class="card">
-                                                <div class="card-header card-header-shrink" id="yeolScoreHeader">
-                                                    <h5 class="mb-0">
-                                                        <button class="btn btn-expand" type="button" data-toggle="collapse" data-target="#yeolScoreCollapse" aria-expanded="false" aria-controls="yeolScoreCollapse">
-                                                          Yeol
-                                                        </button>
-                                                    </h5>
-                                                </div>
-                    
-                                                <div id="yeolScoreCollapse" class="collapse false" aria-labelledby="yeolScoreHeader" data-parent="#baseScoreAccordion">
-                                                    <div class="card-body">
-                                                        <p>Yeol cards are calculated as follows: </p>
-                                                        <ul>
-                                                            <li>A set of 5 yeol cards scores 1 point.</li>
-                                                            <li>Each additional yeol card adds 1 extra point.</li>
-                                                            <li>Special combination adds extra points (as described below).</li>
-                                                        </ul>
-                                                        
-                    
-                                                        <h6 class="card-subtitle section-heading">Special Combination</h6>
-                                                        <br>
-                                                        <!-- table heading row -->
-                                                        <div class="d-flex flex-row">
-                                                            <div class="col-4">Description & Points</div>
-                                                            <div class="col">Combination</div>
-                                                            
-                                                        </div>
-                                                        <div class="d-flex flex-row">
-                                                            <div class="col-4">
-                                                                <p>Godori</p>
-                                                                <p><b>5 Points</b></p>
-                                                            </div>
-                                                            <div class="col">
-                                                                <img class="hwatu-img-med" src="assets/converted/_2_1.svg">
-                                                                <img class="hwatu-img-med" src="assets/converted/_4_1.svg">
-                                                                <img class="hwatu-img-med" src="assets/converted/_8_2.svg">
-                                                            </div>
-                                                        </div>
-                    
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                    
-                                            <!-- tti score card -->
-                                            <div class="card">
-                                                <div class="card-header card-header-shrink" id="ttiScoreHeader">
-                                                    <h5 class="mb-0">
-                                                        <button class="btn btn-expand" type="button" data-toggle="collapse" data-target="#ttiScoreCollapse" aria-expanded="false" aria-controls="ttiScoreCollapse">
-                                                          Tti
-                                                        </button>
-                                                    </h5>
-                                                </div>
-                    
-                                                <div id="ttiScoreCollapse" class="collapse false" aria-labelledby="ttiScoreHeader" data-parent="#baseScoreAccordion">
-                                                    <div class="card-body">
-                                                        <p>Tti cards are calculated as follows: </p>
-                                                        <ul>
-                                                            <li>A set of 5 tti cards scores 1 point.</li>
-                                                            <li>Each additional tti card adds 1 extra point.</li>
-                                                            <li>Special combination adds extra points (as described below).</li>
-                                                        </ul>
-                    
-                                                        <h6 class="card-subtitle section-heading">Special Combination</h6>
-                                                        <br>
-                                                        <!-- table heading row -->
-                                                        <div class="d-flex flex-row">
-                                                            <div class="col-4">Description & Points</div>
-                                                            <div class="col">Combination</div>
-                                                            
-                                                        </div>
-                    
-                                                        <div class="d-flex flex-row">
-                                                            <div class="col-4">
-                                                                <p>Hongdan</p>
-                                                                <p><b>3 Points</b></p>
-                                                            </div>
-                                                            <div class="col">
-                                                                <img class="hwatu-img-med" src="assets/converted/_1_2.svg">
-                                                                <img class="hwatu-img-med" src="assets/converted/_2_2.svg">
-                                                                <img class="hwatu-img-med" src="assets/converted/_3_2.svg">
-                                                            </div>
-                                                        </div>
-                                                        <br>
-                    
-                                                        <div class="d-flex flex-row">
-                                                            <div class="col-4">
-                                                                <p>Chundan</p>
-                                                                <p><b>3 Points</b></p>
-                                                            </div>
-                                                            <div class="col">
-                                                                <img class="hwatu-img-med" src="assets/converted/_6_2.svg">
-                                                                <img class="hwatu-img-med" src="assets/converted/_9_2.svg">
-                                                                <img class="hwatu-img-med" src="assets/converted/_10_2.svg">
-                                                            </div>
-                                                        </div>
-                                                        <br>
-                    
-                                                        <div class="d-flex flex-row">
-                                                            <div class="col-4">
-                                                                <p>Chodan</p>
-                                                                <p><b>3 Points</b></p>
-                                                            </div>
-                                                            <div class="col">
-                                                                <img class="hwatu-img-med" src="assets/converted/_4_2.svg">
-                                                                <img class="hwatu-img-med" src="assets/converted/_5_2.svg">
-                                                                <img class="hwatu-img-med" src="assets/converted/_7_2.svg">
-                                                            </div>
-                                                        </div>
-                    
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                    
-                                            <!-- pi score card -->
-                                            <div class="card">
-                                                <div class="card-header card-header-shrink" id="piScoreHeader">
-                                                    <h5 class="mb-0">
-                                                        <button class="btn btn-expand" type="button" data-toggle="collapse" data-target="#piScoreCollapse" aria-expanded="false" aria-controls="piScoreCollapse">
-                                                          Pi
-                                                        </button>
-                                                    </h5>
-                                                </div>
-                    
-                                                <div id="piScoreCollapse" class="collapse false" aria-labelledby="piScoreHeader" data-parent="#baseScoreAccordion">
-                                                    <div class="card-body">
-                                                        <p>Pi cards are calculated as follows: </p>
-                                                        <ul>
-                                                            <li>A set of 10 pi cards scores 1 point.</li>
-                                                            <li>Each additional pi card adds 1 extra point.</li>
-                                                            <li>Each additional ssangpi card adds 2 extra points.</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                    
-                                        </div> <!-- end accordion  -->
-                                        <br>
-                    
-                                        <h6 class="card-subtitle text-italicize">Calling "Go"</h6>
-                    
-                                            <ul>
-                                                <li>Each call of “Go” adds 1 point.</li>
-                                                <li>Staring with 3-Go, the total score multiplied by a factor of 2.</li>
-                                                <ul>
-                                                    <li>3-Go: 2x current score.</li>
-                                                    <li>4-Go: 4x current score.</li>
-                                                    <li>5-Go: 8x current score.</li>
-                                                    <li>etc.</li>
-                                                </ul>
-                                            </ul>
-                    
-                    
-                                        <h5 class="card-subtitle">Calculating Multiplying Factor</h5>
-                                        <p>The player's score can be multiplied by some factor of 2 if one or more <span class="text-italicize">bak</span> occurs.
-                                        
-                                        <p>After a player's winning, <span class="text-italicize">bak</span> is an event for which the opponent players are penalized based on their collected cards and/or other special events that occur during the game.</p>
-                    
-                                        <!-- begin accordion  -->
-                                        <div class="accordion" id="multiplyingFactorAccordion">
-                    
-                                            <!-- pibak score card -->
-                                            <div class="card">
-                                                <div class="card-header card-header-shrink" id="pibakHeader">
-                                                    <h5 class="mb-0">
-                                                        <button class="btn btn-expand" type="button" data-toggle="collapse" data-target="#pibakCollapse" aria-expanded="false" aria-controls="pibakCollapse">
-                                                          Pi-Bak
-                                                        </button>
-                                                    </h5>
-                                                </div>
-                    
-                                                <div id="pibakCollapse" class="collapse false" aria-labelledby="pibakHeader" data-parent="#multiplyingFactorAccordion">
-                                                    <div class="card-body">
-                                                        <h6 class="card-subtitle section-heading"></h6>
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                    
-                                            <!-- kwangbak score card -->
-                                            <div class="card">
-                                                <div class="card-header card-header-shrink" id="kwangbakHeader">
-                                                    <h5 class="mb-0">
-                                                        <button class="btn btn-expand" type="button" data-toggle="collapse" data-target="#kwangbakCollapse" aria-expanded="false" aria-controls="kwangbakCollapse">
-                                                          Kwang-Bak
-                                                        </button>
-                                                    </h5>
-                                                </div>
-                    
-                                                <div id="kwangbakCollapse" class="collapse false" aria-labelledby="kwangbakHeader" data-parent="#multiplyingFactorAccordion">
-                                                    <div class="card-body">
-                                                        <h6 class="card-subtitle section-heading"></h6>
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                    
-                                            <!-- mungbak score card -->
-                                            <div class="card">
-                                                <div class="card-header card-header-shrink" id="mingbakHeader">
-                                                    <h5 class="mb-0">
-                                                        <button class="btn btn-expand" type="button" data-toggle="collapse" data-target="#mungbakCollapse" aria-expanded="false" aria-controls="mungbakCollapse">
-                                                          Mung-Bak
-                                                        </button>
-                                                    </h5>
-                                                </div>
-                    
-                                                <div id="mungbakCollapse" class="collapse false" aria-labelledby="mingbakHeader" data-parent="#multiplyingFactorAccordion">
-                                                    <div class="card-body">
-                                                        <h6 class="card-subtitle section-heading"></h6>
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                    
-                                            <!-- gobak score card -->
-                                            <div class="card">
-                                                <div class="card-header card-header-shrink" id="gobakHeader">
-                                                    <h5 class="mb-0">
-                                                        <button class="btn btn-expand" type="button" data-toggle="collapse" data-target="#gobakCollapse" aria-expanded="false" aria-controls="gobakCollapse">
-                                                          Go-Bak
-                                                        </button>
-                                                    </h5>
-                                                </div>
-                    
-                                                <div id="gobakCollapse" class="collapse false" aria-labelledby="gobakHeader" data-parent="#multiplyingFactorAccordion">
-                                                    <div class="card-body">
-                                                        <h6 class="card-subtitle section-heading"></h6>
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
                                             <br>
-                    
-                                            <h6 class="card-subtitle text-italicize">Other Events That Contribute to Multiplying Factors</h6>
-                                            <ul>
-                                                <li>Placing a bomb</li>
-                                                <li>Shaking: the player <span class="text-italicize">must</span> have had their 3 cards revealed to all the players in the game.</li>
-                                            </ul>
-                    
-                                            <p>
-                                                <span class="text-italicize">Special Notes</span>: 
-                                                <ul>
-                                                    <li>Multiple bombs/shakes are also cumulative. For example, two bombs will lead to a multiplicative factor of 4.</li>
-                                                </ul>
-                    
-                                            </p>
-                    
-                    
-                    
-                                        </div> <!-- end accordion  -->
-                    
-                                        <br>
-                    
-                                        <h5 class="card-subtitle">Example Calculation</h5>
-                    
-                                        <!-- begin accordion  -->
-                                        <div class="accordion" id="exampleAccordion">
-                    
-                                            <!-- example score calculation card -->
-                                            <div class="card">
-                                                <div class="card-header card-header-shrink" id="scoreExampleHeader">
-                                                    <h5 class="mb-0">
-                                                        <button class="btn btn-expand" type="button" data-toggle="collapse" data-target="#scoreExampleCollapse" aria-expanded="false" aria-controls="scoreExampleCollapse">
-                                                          Example of Score Calculation
-                                                        </button>
-                                                    </h5>
-                                                </div>
-                    
-                                                <div id="scoreExampleCollapse" class="collapse false" aria-labelledby="scoreExampleHeader" data-parent="#exampleAccordion">
-                                                    <div class="card-body">
-                                                        <h6 class="card-subtitle section-heading"></h6>
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                    
-                                        </div> <!-- end accordion  -->
-                    
-                                        
-                                    </div>
-                    
-                                    <!-- winning section -->
-                                    <a class="section-heading-click" data-toggle="collapse" role="button" href="#winningSection" aria-expanded="false" aria-controls="winningSection">
-                                        <div class="d-flex flex-row section-row">
-                                            <div class="p-2"><h5 class="card-subtitle section-heading">Winning</h5></div>
-                                            <div class="p-2 ml-auto">
-                                                <i class="fas fa-chevron-circle-down fa-2x"></i>
-                                            </div>
-                                        </div>
-                                    </a>
-                    
-                                    <div class="collapse p-2" id="winningSection">
-                    
-                                        
-                                    </div>
-                    
-                    
+                                            
+                                        </div>                    
                     
                                     <hr>
                     
