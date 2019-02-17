@@ -6,26 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title></title>
 
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
-    <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous"> -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
-    <!-- <script src="./gameBoardGraphics.js"></script> -->
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="css/sidebarStyle.css">
     <link rel="stylesheet" href="css/styles.css">
 
     <!-- fonts -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
-
 
 </head>
 
@@ -38,18 +29,18 @@
     <div class="container">
 
         <div class="card">
-            <h4 class="card-title">Game Setup</h4>
+            <h4 class="card-title">Setup</h4>
 
             <div class="card-body" id="parent1">
                 <p>
-                    The players sit in a circle or in some round fashion. The play begins with the dealer distributing
-                    the cards.
+                    The players sit in a circle or in some round fashion. The play begins with the dealer and continues in the counterclockwise direction.
                 </p>
 
-                <p>
-                    The game set up is broken into two main parts:
-                </p>
 
+                <!-- <div class="svg-container" id="floorPlan" style="position: relative; width: 100%;"></div> -->
+                <button id="translateBtn">Translate!</button>
+
+                <br>
 
                 <div class="accordion" id="setupStepsAccordion">
                     
@@ -58,7 +49,7 @@
                         <div class="card-header" id="selectDealerHeader">
                             <h5 class="mb-0">
                                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#selectDealerCollapse" aria-expanded="false" aria-controls="selectDealerCollapse">
-                                  A. Selecting the Dealer
+                                  Selecting the Dealer
                                 </button>
                             </h5>
                         </div>
@@ -84,6 +75,9 @@
 
                                     <p>Does the translation make sense now?</p>
 
+                                    <p>[INSERT IMAGE HERE!!! Describe the different area of the board]</p>
+                                    <div class="svg-container" id="floorPlan" style="width: 100%;"></div>
+                            
                                 </p>
                                 
                             </div>
@@ -95,7 +89,7 @@
                         <div class="card-header" id="cardHandoutHeader">
                             <h5 class="mb-0">
                                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#cardHandoutCollapse" aria-expanded="false" aria-controls="cardHandoutCollapse">
-                                 B. Distributing Out Cards
+                                  Shuffling, Cutting, and Dealing
                                 </button>
                             </h5>
                         </div>
@@ -114,6 +108,8 @@
                                     This player will grab a chunk of the deck from the dealer's hand and place it face down on the center of the game floor.
                                 </p>
 
+                                <p>[IMAGE!!!!!!!!!]</p>
+
                                 <h6 class="card-subtitle">Dealing</h6>
 
                                 <p>The dealer takes the following steps for handing out the card.</p>
@@ -128,6 +124,8 @@
                                         <li>Place the remaining deck in the center of the floor.</li>
                                     </ol>
 
+                                    <p>[IMAGE!!!!!!!!!]</p>
+
                                 </p>
 
                                 <p>
@@ -141,11 +139,14 @@
                                         <li>Place the remaining deck on the center of the floor.</li>
                                     </ol>
 
+                                    <p>[IMAGE!!!!!!!!!]</p>
+
                                 </p>
 
-                                <div class="svg-container" id="floorPlan" style="position: relative; width: 100%;"></div>
-
-
+                                <p>
+                            
+                            
+                                </p>
                             </div>
                         </div>
 
@@ -169,62 +170,11 @@
         </div>
 
     </div>
-    <script type="text/javascript" src="./gameBoardGraphics.js"></script>
 
-    <script type="text/javascript">
-    $(document).ready(function() {
-
-        let body = d3.select('body');
-        let floorPlan = body.select('#floorPlan');
-        let svgContainer = createSvgElement(body, 'floorPlan');
-
-       addAllCardsAsPattern();
-
-        drawFloorSections(svgContainer, floorPlan);
-        $('#cardHandoutCollapse').on('shown.bs.collapse', () => {
-            drawCenterRemainingDeck(svgContainer);
-            initialFloorSetUp();
-        });
-        
-
-        function initialFloorSetUp() {
-            // opponent card
-            drawHandCardFaceDownSvg(svgContainer)
-
-            // curr player hand card
-            drawHandCardForCurrPlayer(svgContainer, '_1_1', position=0) 
-            drawHandCardForCurrPlayer(svgContainer, '_2_3', position=1) 
-            drawHandCardForCurrPlayer(svgContainer, '_4_1', position=2) 
-            drawHandCardForCurrPlayer(svgContainer, '_4_2', position=3) 
-            drawHandCardForCurrPlayer(svgContainer, '_6_1', position=4) 
-            drawHandCardForCurrPlayer(svgContainer, '_6_3', position=5) 
-            drawHandCardForCurrPlayer(svgContainer, '_7_2', position=6)
-            drawHandCardForCurrPlayer(svgContainer, '_8_3', position=7)
-            drawHandCardForCurrPlayer(svgContainer, '_10_1', position=8)
-            drawHandCardForCurrPlayer(svgContainer, '_12_3', position=9)
-            
-
-            // floor cards
-            drawFloorCard(svgContainer, '_2_2', floorPos=1);
-            drawFloorCard(svgContainer, '_5_3', floorPos=2);
-            drawFloorCard(svgContainer, '_6_2', floorPos=3);
-            drawFloorCard(svgContainer, '_11_2', floorPos=4);
-            drawFloorCard(svgContainer, '_9_1', floorPos=5, cardPosWithin=0);
-            drawFloorCard(svgContainer, '_9_2', floorPos=5, cardPosWithin=1);
-            drawFloorCard(svgContainer, '_7_3', floorPos=6, cardPosWithin=0);
-            drawFloorCard(svgContainer, '_7_4', floorPos=6, cardPosWithin=1);
-            //drawFloorCard(svgContainer, '_10_4', floorPos=4), cardPosWithin=1;
-
-            
-        }
-
-
-    });
-    </script>
     
 
 </body>
-<!-- <script type="text/javascript">
+<script type="text/javascript">
     $(document).ready(function() {
         var canvas = document.getElementById('floorCanvas');
         let aspectRatio = 0.9;
@@ -381,7 +331,7 @@
                         .attr('width', deckImg.width / imageScale)
                         .attr('height', deckImg.height / imageScale);
         
-            }
+        }
 
         drawHandCardFaceDownSvg();
         drawHandCardFaceUpSvg();
@@ -516,7 +466,7 @@
         }
 
         let g3 = svgContainer.append('g').attr('id', 'g3')
-                                g2.append('rect')
+                                g3.append('rect')
                                 .attr('x', 5 * deckImg.width / imageScale / 2 + 6.5 * gridUnitWidth  + 1 * deckImg.width / imageScale / 2)
                                 .attr('y', handCardSectionHeight + deckImg.height / imageScale + gridTopBottomPadding)
                                 .attr('width', deckImg.width / imageScale)
@@ -556,7 +506,7 @@
     // function drawBoard() {
 
     // }
-</script> -->
+</script>
 
 
 </html>

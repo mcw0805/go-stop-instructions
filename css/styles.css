@@ -18,7 +18,17 @@
 
 .section-row {
     border: solid 1px lightgrey;
-    border-radius: 1px;
+    border-radius: 3px;
+}
+
+.page-heading {
+    padding-left: 18px;
+    margin-top: 12px; 
+    margin-bottom: 0;
+}
+
+#floorPlan svg {
+    width: 65%;
 }
 
 /*a:hover  .section-heading {
@@ -27,6 +37,10 @@
 
 a.section-heading-click {
     text-decoration: none ;
+}
+
+a.site-header:hover{
+    text-decoration: none;
 }
 
 .card-subtitle {
@@ -61,3 +75,19 @@ a.section-heading-click {
 .card .card-header-shrink {
     padding: 0;
 }
+
+.reddish-highlight {
+    border-radius: 4px;
+    padding: 2px;
+    color: #721c24; 
+    background-color: #f8d7da
+}
+
+.bar-active {
+    border-top: 3px solid skyblue; 
+    border-bottom: 3px solid skyblue; 
+    color:darkcyan ;
+    font-weight: bold; 
+
+}
+

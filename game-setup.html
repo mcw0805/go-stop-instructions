@@ -6,179 +6,259 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title></title>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
-    <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
 
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/sidebarStyle.css">
     <link rel="stylesheet" href="css/styles.css">
 
     <!-- fonts -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-
-
 </head>
 
 <body>
-    <header>
-        Header
-
-    </header>
-
-    <div class="container">
-
-        <div class="card">
-            <h4 class="card-title">Setup</h4>
-
-            <div class="card-body" id="parent1">
-                <p>
-                    The players sit in a circle or in some round fashion. The play begins with the dealer and continues in the counterclockwise direction.
-                </p>
-                <p>[INSERT IMAGE HERE!!! floor image]</p>
-                <canvas id="floorCanvas" style="position: relative; width: 100%;" ></canvas>
-
-                <!-- <div class="svg-container" id="floorPlan" style="position: relative; width: 100%;"></div> -->
-                <button id="translateBtn">Translate!</button>
-
-                <br>
-
-                <div class="accordion" id="setupStepsAccordion">
-                    
-                    <!-- select dealer card -->
-                    <div class="card">
-                        <div class="card-header" id="selectDealerHeader">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#selectDealerCollapse" aria-expanded="false" aria-controls="selectDealerCollapse">
-                                  Selecting the Dealer
-                                </button>
-                            </h5>
-                        </div>
-
-                        <div id="selectDealerCollapse" class="collapse false" aria-labelledby="selectDealerHeader" data-parent="#setupStepsAccordion">
-                            <div class="card-body">
-                                <p>The dealer is selected by a method called <span class="foreign-word">bam-il-nat-jang (밤일낮장)</span>. Translating each syllable becomes <i>night-one-day-big.</i></p>
-
-                                <p>
-                                    Steps:
-                                    <ol>
-                                        <li>Each player selects a random card from the deck.</li>
-                                        <li>Check the time of the day.</li>
-                                        <ul>
-                                            <li>
-                                                Night time: Player with the month card closest to January is the dealer.  
-                                            </li>
-                                            <li>
-                                                Day time: Player with the month card closest to December is the dealer.  
-                                            </li>
-                                        </ul>
-                                    </ol>
-
-                                    <p>Does the translation make sense now?</p>
-
-                                    <p>[INSERT IMAGE HERE!!! Describe the different area of the board]</p>
-                                    <div class="svg-container" id="floorPlan" style="width: 100%;"></div>
-                            
-                                </p>
-                                
-                            </div>
-                        </div>
+        <div class="d-flex" id="wrapper">
+                <!-- Sidebar -->
+                <div class="bg-light border-right" id="sidebar-wrapper">
+                    <div class="sidebar-heading">Contents</div>
+                    <div class="list-group list-group-flush">
+                        <a href="game-objective.html" class="list-group-item list-group-item-action bg-light">Objective</a>
+                        <a href="card-description.html" class="list-group-item list-group-item-action bg-light">Card Description</a>
+                        <a href="game-setup.html" class="list-group-item list-group-item-action bg-light bar-active">Setup</a>
+                        <a href="game-play.html" class="list-group-item list-group-item-action bg-light">Gameplay</a>
+                        <a href="#" class="list-group-item list-group-item-action bg-light">Special Rules</a>
                     </div>
-
-                    <!-- select shuffle/cut/deal card -->
-                    <div class="card">
-                        <div class="card-header" id="cardHandoutHeader">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#cardHandoutCollapse" aria-expanded="false" aria-controls="cardHandoutCollapse">
-                                  Shuffling, Cutting, and Dealing
-                                </button>
-                            </h5>
-                        </div>
-
-                        <div id="cardHandoutCollapse" class="collapse false" aria-labelledby="cardHandoutHeader" data-parent="#setupStepsAccordion">
-                            <div class="card-body">
-
-                                <h6 class="card-subtitle">Shuffling</h6>
-                                <p>The dealer is responsible for sufficiently shuffling the deck before dealing the cards to the players.</p>
-
-                                <h6 class="card-subtitle">Cutting</h6>
-                                <p>
-                                    The last player in the circle (i.e. the player immediately left of the dealer) is responsible for cutting the deck.
-                                </p> 
-                                <p>
-                                    This player will grab a chunk of the deck from the dealer's hand and place it face down on the center of the game floor.
-                                </p>
-
-                                <p>[IMAGE!!!!!!!!!]</p>
-
-                                <h6 class="card-subtitle">Dealing</h6>
-
-                                <p>The dealer takes the following steps for handing out the card.</p>
-                                <p>
-                                    
-                                    Two Players:
-                                    <ol>
-                                        <li>Place 4 cards facing up on the floor.</li>
-                                        <li>Hand 5 cards facing down to the other player.</li>
-                                        <li>Hand 5 cards to their hand.</li>
-                                        <li>Repeat 1-3 once more.</li>
-                                        <li>Place the remaining deck in the center of the floor.</li>
-                                    </ol>
-
-                                    <p>[IMAGE!!!!!!!!!]</p>
-
-                                </p>
-
-                                <p>
-                                    
-                                    Three Players:
-                                    <ol>
-                                        <li>Place 3 cards facing up on the floor.</li>
-                                        <li>Hand 4 cards to the other player’s hand facing down, starting with the player right of the dealer and moving in counterclockwise direction</li>
-                                        <li>Hand 4 cards to their hand.</li>
-                                        <li>Repeat 1-3 once more.</li>
-                                        <li>Place the remaining deck on the center of the floor.</li>
-                                    </ol>
-
-                                    <p>[IMAGE!!!!!!!!!]</p>
-
-                                </p>
-
-                                <p>
-                            
-                            
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-                
-                </div> <!-- end accordion -->
-
-                <hr>
-
-                <p>
-                    
-                </p>
-                <div style="display:none;">
-                  <img id="source"
-                       src="./assets/_back.svg"
-                       >
                 </div>
+                <!-- /#sidebar-wrapper -->
+        
+                <!-- Page Content -->
+                <div id="page-content-wrapper">
+        
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                        <a class="site-header" href="home.html" ><h2 id="menu-toggle">The Game of Go-Stop</h2></a>
+                    </nav>
+                    <br>
+        
+                    <div class="container">
 
+                            <div class="card">
+                                <h3 class="card-title page-heading">Game Setup</h3>
+                                <hr>
+                                <div class="card-body">
+                                    <h5 class="card-title">Game Table ("Floor")</h5>
+                                    <p>
+                                            This section will introduce how a Go-Stop game table or "floor" looks like and how to lay the cards
+                                            you learned to recognize in the previous section.
+                                    </p>
+                                    <div class="svg-container" id="floorPlan" style="position: relative; width: 100%;"></div>
 
+                                    <div style="display:none;"><img id="source" src="./assets/_back.svg"></div>
+                                </div>
+                                
+                                <div class="card-body" >
+                                    <p>
+                                        The players sit in a circle or in some round fashion. The play begins with the dealer distributing
+                                        the cards.
+                                    </p>
+                    
+                                    <p>
+                                        The game set up is broken into two main parts:
+                                    </p>
+                    
+                    
+                                    <div class="accordion" id="setupStepsAccordion">
+                                        
+                                        <!-- select dealer card -->
+                                        <div class="card">
+                                            <div class="card-header" id="selectDealerHeader">
+                                                <h5 class="mb-0">
+                                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#selectDealerCollapse" aria-expanded="false" aria-controls="selectDealerCollapse">
+                                                      A. Selecting the Dealer
+                                                    </button>
+                                                </h5>
+                                            </div>
+                    
+                                            <div id="selectDealerCollapse" class="collapse false" aria-labelledby="selectDealerHeader" data-parent="#setupStepsAccordion">
+                                                <div class="card-body">
+                                                    <p>The dealer is selected by a method called <span class="foreign-word">bam-il-nat-jang (밤일낮장)</span>. Translating each syllable becomes <i>night-one-day-big.</i></p>
+                    
+                                                    <p>
+                                                        Steps:
+                                                        <ol>
+                                                            <li>Each player selects a random card from the deck.</li>
+                                                            <li>Check the time of the day.</li>
+                                                            <ul>
+                                                                <li>
+                                                                    Night time: Player with the month card closest to January is the dealer.  
+                                                                </li>
+                                                                <li>
+                                                                    Day time: Player with the month card closest to December is the dealer.  
+                                                                </li>
+                                                            </ul>
+                                                        </ol>
+                    
+                                                        <p>Does the translation make sense now?</p>
+                    
+                                                    </p>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                    
+                                        <!-- select shuffle/cut/deal card -->
+                                        <div class="card">
+                                            <div class="card-header" id="cardHandoutHeader">
+                                                <h5 class="mb-0">
+                                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#cardHandoutCollapse" aria-expanded="false" aria-controls="cardHandoutCollapse">
+                                                     B. Distributing Out Cards
+                                                    </button>
+                                                </h5>
+                                            </div>
+                    
+                                            <div id="cardHandoutCollapse" class="collapse false" aria-labelledby="cardHandoutHeader" data-parent="#setupStepsAccordion">
+                                                <div class="card-body">
+                    
+                                                    <h6 class="card-subtitle">Shuffling</h6>
+                                                    <p>The dealer is responsible for sufficiently shuffling the deck before dealing the cards to the players.</p>
+                    
+                                                    <h6 class="card-subtitle">Cutting</h6>
+                                                    <p>
+                                                        The last player in the circle (i.e. the player immediately left of the dealer) is responsible for cutting the deck.
+                                                    </p> 
+                                                    <p>
+                                                        This player will grab a chunk of the deck from the dealer's hand and place it face down on the center of the game floor.
+                                                    </p>
+                    
+                                                    <h6 class="card-subtitle">Dealing</h6>
+                    
+                                                    <p>The dealer takes the following steps for handing out the card.</p>
+                                                    <p>
+                                                        
+                                                        Two Players:
+                                                        <ol>
+                                                            <li>Place 4 cards facing up on the floor.</li>
+                                                            <li>Hand 5 cards facing down to the other player.</li>
+                                                            <li>Hand 5 cards to their hand.</li>
+                                                            <li>Repeat 1-3 once more.</li>
+                                                            <li>Place the remaining deck in the center of the floor.</li>
+                                                        </ol>
+                    
+                                                    </p>
+                    
+                                                    <p>
+                                                        
+                                                        Three Players:
+                                                        <ol>
+                                                            <li>Place 3 cards facing up on the floor.</li>
+                                                            <li>Hand 4 cards to the other player’s hand facing down, starting with the player right of the dealer and moving in counterclockwise direction</li>
+                                                            <li>Hand 4 cards to their hand.</li>
+                                                            <li>Repeat 1-3 once more.</li>
+                                                            <li>Place the remaining deck on the center of the floor.</li>
+                                                        </ol>
+                    
+                                                    </p>
+                                        
+                    
+                                                </div>
+                                            </div>
+                    
+                                        </div>
+                                    
+                                    </div> <!-- end accordion -->
+                    
+                                    <hr>
+                    
+                                    <p>
+                                        
+                                    </p>
+                                    <div style="display:none;">
+                                      <img id="source"
+                                           src="./assets/_back.svg"
+                                           >
+                                    </div>
+                    
+                    
+                                </div>
+                            </div>
+                    
+                        </div>
+                </div>
+                <!-- /#page-content-wrapper -->
+        
             </div>
-        </div>
 
-    </div>
 
+    <script type="text/javascript" src="./gameBoardGraphics.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+        let body = d3.select('body');
+        let floorPlan = body.select('#floorPlan');
+        let svgContainer = createSvgElement(body, 'floorPlan');
+
+       
+        addAllCardsAsPattern();
+        drawFloorSections(svgContainer, floorPlan);
+
+        initialFloorSetUp();
+        function initialFloorSetUp() {
+            // center deck
+            drawCenterRemainingDeck(svgContainer);
+            // opponent card
+            drawHandCardFaceDownSvg(svgContainer)
+
+            // opponent collection
+            drawCollectionCard(svgContainer, 0, '_8_1', cardPosWithin=0)
+            drawCollectionCard(svgContainer, 1, '_2_1', cardPosWithin=0)
+            drawCollectionCard(svgContainer, 1, '_6_1', cardPosWithin=1)
+            drawCollectionCard(svgContainer, 2, '_3_2', cardPosWithin=0)
+            drawCollectionCard(svgContainer, 2, '_9_2', cardPosWithin=1)
+            drawCollectionCard(svgContainer, 3, '_9_4', cardPosWithin=0)
+            drawCollectionCard(svgContainer, 3, '_6_3', cardPosWithin=1)
+            drawCollectionCard(svgContainer, 3, '_3_4', cardPosWithin=2)
+
+
+            // curr player hand card
+            drawHandCardForCurrPlayer(svgContainer, '_1_3', position=0) 
+            drawHandCardForCurrPlayer(svgContainer, '_3_3', position=1) 
+            drawHandCardForCurrPlayer(svgContainer, '_7_3', position=2) 
+            drawHandCardForCurrPlayer(svgContainer, '_8_2', position=3) 
+            drawHandCardForCurrPlayer(svgContainer, '_9_1', position=4) 
+            drawHandCardForCurrPlayer(svgContainer, '_10_2', position=5) 
+            drawHandCardForCurrPlayer(svgContainer, '_11_3', position=6)
+            
+            // curr player collection
+            drawCollectionCard(svgContainer, 0, '_12_1', cardPosWithin=0, currPlayer=true)
+            drawCollectionCard(svgContainer, 1, '_5_1', cardPosWithin=0, currPlayer=true)
+            drawCollectionCard(svgContainer, 1, '_4_1', cardPosWithin=1, currPlayer=true)
+            drawCollectionCard(svgContainer, 2, '_5_2', cardPosWithin=0, currPlayer=true)
+            drawCollectionCard(svgContainer, 2, '_4_2', cardPosWithin=1, currPlayer=true)
+            drawCollectionCard(svgContainer, 3, '_12_4', cardPosWithin=0, currPlayer=true)
+            drawCollectionCard(svgContainer, 3, '_4_3', cardPosWithin=1, currPlayer=true)
+            drawCollectionCard(svgContainer, 3, '_4_4', cardPosWithin=2, currPlayer=true)
+            drawCollectionCard(svgContainer, 3, '_8_3', cardPosWithin=3, currPlayer=true)
+            drawCollectionCard(svgContainer, 3, '_2_3', cardPosWithin=0, currPlayer=true, piLevel=1)
+
+            // floor cards
+            drawFloorCard(svgContainer, '_2_4', floorPos=1);
+            drawFloorCard(svgContainer, '_10_3', floorPos=4);
+            //drawFloorCard(svgContainer, '_10_4', floorPos=4), cardPosWithin=1;
+
+        }
+
+
+
+    });
+    </script>
     
 
 </body>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     $(document).ready(function() {
         var canvas = document.getElementById('floorCanvas');
         let aspectRatio = 0.9;
@@ -335,7 +415,7 @@
                         .attr('width', deckImg.width / imageScale)
                         .attr('height', deckImg.height / imageScale);
         
-        }
+            }
 
         drawHandCardFaceDownSvg();
         drawHandCardFaceUpSvg();
@@ -470,7 +550,7 @@
         }
 
         let g3 = svgContainer.append('g').attr('id', 'g3')
-                                g3.append('rect')
+                                g2.append('rect')
                                 .attr('x', 5 * deckImg.width / imageScale / 2 + 6.5 * gridUnitWidth  + 1 * deckImg.width / imageScale / 2)
                                 .attr('y', handCardSectionHeight + deckImg.height / imageScale + gridTopBottomPadding)
                                 .attr('width', deckImg.width / imageScale)
@@ -510,7 +590,7 @@
     // function drawBoard() {
 
     // }
-</script>
+</script> -->
 
 
 </html>
