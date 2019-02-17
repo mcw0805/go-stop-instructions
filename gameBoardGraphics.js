@@ -77,10 +77,7 @@
     }
     
     function drawFloorSections(svgElement, floorDiv) {
-        let g = svgElement.append('g').attr('id', 'floorSectionRectG');
-        console.log(floorDiv.style('width'));
-        console.log('xxx')
-        console.log(boardSections[1][1])
+        let g = svgElement.append('g').attr('class', 'floorSectionRectG');
 
         for (let i = 0; i < 5; i++) {
             g.append('rect')
@@ -98,7 +95,7 @@
         let floorPosY = floorCords['f_y'];
         let mainFloorG = svgElement.select(`#centerDeckG${groupIdSuffix}`);
         let groupId = cardPatternId + 'g' + groupIdSuffix;
-        drawCardAsGroup(mainFloorG, floorPosX, floorPosY, cardPatternId, groupId);
+        drawCardAsGroup(mainFloorG, floorPosX, floorPosY, cardPatternId, groupId, groupIdSuffix);
 
         
     }
@@ -158,15 +155,17 @@
         let centerX = svgElement.node().getBBox().width / 2 - baseImg.width / imageScale / 2;
         let centerY = svgElement.node().getBBox().height / 2 - baseImg.height / imageScale / 2;
         let centerDeckG = svgElement.append('g').attr('id', 'centerDeckG' + groupIdSuffix);
-        drawCardAsGroup(centerDeckG, centerX, centerY, 'back', 'backg');
+        drawCardAsGroup(centerDeckG, centerX, centerY, 'back', 'backg', groupIdSuffix);
 
     }
 
     // for opponent
     // card always flipped over
     function drawHandCardFaceDownSvg(svgElement, numCards=10, startPosX=gridLeftRightPadding, startPosY=gridTopBottomPadding) {
+        let opponentCardG = svgElement.append('g')
+                .attr('class', 'opponentCards');
         for (let i = 0; i < numCards; i++) {
-            svgElement.append('svg:image')
+            opponentCardG.append('svg:image')
                         .attr('xlink:href', cardImgSrcDict[0][0]) // backcard
                         .attr('x', startPosX + i * (baseImg.width / imageScale + gridLeftRightPadding))
                         .attr('y', startPosY)
@@ -181,48 +180,20 @@
         let startPosX = gridLeftRightPadding + position * (baseImg.width / imageScale + gridLeftRightPadding);
         let startPosY = handCardSectionHeight + collectionCardSectionHeight * 2 + mainGameFloorSectionHeight + gridTopBottomPadding;
         let groupId = cardPatternId + 'g' + groupIdSuffix;
-        drawCardAsGroup(svgElement, startPosX, startPosY, cardPatternId, groupId);
+        drawCardAsGroup(svgElement, startPosX, startPosY, cardPatternId, groupId, groupIdSuffix);
     }
 
     // for either player
     // assume card pattern is already added!!!
     function drawCollectionCard(svgElement, rank, cardPatternId, cardPosWithin=0, currPlayer=false, piLevel=0, groupIdSuffix="") {
-        // let startPosX = gridLeftRightPadding;
-        // let startPosY = (handCardSectionHeight +  baseImg.height / imageScale / 2 + gridTopBottomPadding); // where kwang starts on opponent side
-        
-        // if (rank == 0) { // kwang
-        //     startPosX = gridLeftRightPadding;
-        //     startPosY = handCardSectionHeight +  baseImg.height / imageScale / 2 + gridTopBottomPadding;
-            
-        // } else if (rank == 1) { // yeol
-        //     startPosX = 5 * baseImg.width / imageScale / 2 + 2.5 * gridUnitWidth + gridLeftRightPadding;
-        //     startPosY = handCardSectionHeight + gridTopBottomPadding;
-            
-        // } else if (rank == 2) { // ribbon
-        //     startPosX = 5 * baseImg.width / imageScale / 2 + 2.5 * gridUnitWidth + gridLeftRightPadding;
-        //     startPosY = handCardSectionHeight + baseImg.height / imageScale + gridTopBottomPadding ;
-        // } else if (rank == 3) { // pi
-        //     startPosX = 5 * baseImg.width / imageScale / 2 + 6.5 * gridUnitWidth ;
-        //     startPosY = handCardSectionHeight + baseImg.height / imageScale + gridTopBottomPadding ;
-        //     if (piLevel > 0) {
-        //         startPosY -= baseImg.height / imageScale;
-        //     }
-        // }
 
-        // if (currPlayer) { // for curr player -> just shift down
-        //     startPosY += (collectionCardSectionHeight + mainGameFloorSectionHeight);
-        // }
-
-        // if (cardPosWithin > 0) {
-        //     startPosX += cardPosWithin * baseImg.width / imageScale / 2;
-        // }
         let cPos = getCollectionCardPos(rank, cardPosWithin, piLevel, currPlayer);
         let startPosX = cPos['c_x'];
         let startPosY = cPos['c_y'];
 
         let groupId = cardPatternId + 'g' + groupIdSuffix;
 
-        drawCardAsGroup(svgElement, startPosX, startPosY, cardPatternId, groupId);
+        drawCardAsGroup(svgElement, startPosX, startPosY, cardPatternId, groupId, groupIdSuffix);
     }
 
     function getCollectionCardPos(rank, cardPosWithin=0, piLevel=0, currPlayer=true) {
@@ -259,34 +230,22 @@
         return {'c_x':startPosX, 'c_y':startPosY};
     }
 
-    function addAllCardsAsPattern() {
-        addCardImgAsPattern(cardImgSrcDict[0][0], 'back');
+    function addAllCardsAsPattern(divId, groupIdSuffix='') {
+        addCardImgAsPattern(divId, cardImgSrcDict[0][0], `back${groupIdSuffix}`);
 
         for (let i = 1; i <= 12; i++) {
             let monthNum = i;
             for (let cardNum = 1; cardNum <= 4; cardNum++) {
-                let patId = `_${monthNum}_${cardNum}`;
-                addCardImgAsPattern(cardImgSrcDict[monthNum][cardNum - 1], patId);
+                let patId = `_${monthNum}_${cardNum}${groupIdSuffix}`;
+                addCardImgAsPattern(divId, cardImgSrcDict[monthNum][cardNum - 1], patId);
             }
             
         }
     }
 
-    function addAllCardsAsPattern2(svgElement) {
-        addCardImgAsPattern(cardImgSrcDict[0][0], 'back');
-
-        for (let i = 1; i <= 12; i++) {
-            let monthNum = i;
-            for (let cardNum = 1; cardNum <= 4; cardNum++) {
-                let patId = `_${monthNum}_${cardNum}`;
-                addCardImgAsPattern2(svgElement, cardImgSrcDict[monthNum][cardNum - 1], patId);
-            }
-            
-        }
-    }
-
-    function addCardImgAsPattern2(svgElement, imgSrc=baseImg.src, id) {
-        svgElement.select('defs')
+    // appends a pattern to a particular div def
+    function addCardImgAsPattern(divId, imgSrc=baseImg.src, id) {
+        d3.select(`#${divId} defs`)
             .append('pattern')
             .attr('id', id)
             .attr('width', baseImg.width / imageScale)
@@ -298,33 +257,14 @@
 
     }
 
-    function fullFloorSetUp(cardPatternList, ) {
-
-    }
-
-    // creates a pattern, which adds image on a rectangle
-    // this should be used when setting up the deck
-    function addCardImgAsPattern(imgSrc=baseImg.src, id) {
-        d3.select('defs')
-            .append('pattern')
-            .attr('id', id)
-            .attr('width', baseImg.width / imageScale)
-            .attr('height', baseImg.height / imageScale)
-            .append('svg:image')
-            .attr('xlink:href', imgSrc)
-            .attr('width', baseImg.width / imageScale)
-            .attr('height', baseImg.height / imageScale);
-
-    }
-
-    function drawCardAsGroup(svgElement, x, y, patternId, groupId,  width=(baseImg.width/imageScale), height=(baseImg.height/imageScale)) {
+    function drawCardAsGroup(svgElement, x, y, patternId, groupId, groupIdSuffix='', width=(baseImg.width/imageScale), height=(baseImg.height/imageScale)) {
         let g = svgElement.append('g').attr('id', groupId);
                             g.append('rect')
                             .attr('x', x)
                             .attr('y', y)
                             .attr('width', width)
                             .attr('height', height)
-                            .style('fill', `url(#${patternId})`); 
+                            .style('fill', `url(#${patternId}${groupIdSuffix})`); 
 
                         
 
@@ -354,106 +294,6 @@
                 .style('stroke', 'none')
                 .on('end', blink);
     }
- 
-
-    // drawHandCardFaceDownSvg();
-    // drawHandCardFaceUpSvg();
-    // placeCardOnCollector(0, './assets/converted/_1_1.svg', 0);
-    // placeCardOnCollector(0, './assets/converted/_3_1.svg', 1);
-    // placeCardOnCollector(0, './assets/converted/_8_1.svg', 2);
-    // placeCardOnCollector(0, './assets/converted/_11_1.svg', 3);
-    // placeCardOnCollector(0, './assets/converted/_12_1.svg', 4, true);
-
-    // placeCardOnCollector(1, './assets/converted/_2_1.svg', 0);
-    // placeCardOnCollector(1, './assets/converted/_4_1.svg', 1, true);
-
-    // placeCardOnCollector(2, './assets/converted/_2_2.svg', 0);
-    // placeCardOnCollector(2, './assets/converted/_4_2.svg', 1, true);
-
-    // //placeCardOnCollector(3, './assets/converted/_4_3.svg', 0, false, "x");
-    // placeCardOnCollector(3, './assets/converted/_4_4.svg', 1, true);
-
-    // function drawHandCardFaceDownSvg(startPosX=gridLeftRightPadding, startPosY=gridTopBottomPadding, numCards=10) {
-    //     for (let i = 0; i < numCards; i++) {
-    //         svgContainer.append('svg:image')
-    //                     .attr('xlink:href', backCardImgSrc)
-    //                     .attr('x', startPosX + i * (deckImg.width / imageScale + gridLeftRightPadding))
-    //                     .attr('y', startPosY)
-    //                     .attr('width', deckImg.width / imageScale)
-    //                     .attr('height', deckImg.height / imageScale);
-    //     }
-    // }
-
-    // function drawHandCardFaceUpSvg(startPosX=gridLeftRightPadding, startPosY=(handCardSectionHeight + collectionCardSectionHeight*2 + mainGameFloorSectionHeight + gridTopBottomPadding), numCards=10) {
-    //     for (let i = 0; i < numCards; i++) {
-    //         svgContainer.append('svg:image')
-    //                     .attr('xlink:href', backCardImgSrc)
-    //                     .attr('x', startPosX + i * (deckImg.width / imageScale + gridLeftRightPadding))
-    //                     .attr('y', startPosY)
-    //                     .attr('width', deckImg.width / imageScale)
-    //                     .attr('height', deckImg.height / imageScale);
-    //     }
-    // }
-
-    // function placeCardOnCollector(rank, imgSrc=baseImg.src, cardPosWithin=0, currPlayer=false, id="", startPosX=gridLeftRightPadding, startPosY=(handCardSectionHeight +  deckImg.height / imageScale / 2 + gridTopBottomPadding)) {
-        
-
-    //     if (rank == 0) {
-    //         startPosX = gridLeftRightPadding;
-    //         startPosY = handCardSectionHeight +  deckImg.height / imageScale / 2 + gridTopBottomPadding;
-            
-    //     } else if (rank == 1) {
-    //         startPosX = 5 * deckImg.width / imageScale / 2 + 2.5 * gridUnitWidth + gridLeftRightPadding;
-    //         startPosY = handCardSectionHeight + gridTopBottomPadding;
-            
-    //     } else if (rank == 2) {
-    //         startPosX = 5 * deckImg.width / imageScale / 2 + 2.5 * gridUnitWidth + gridLeftRightPadding;
-    //         startPosY = handCardSectionHeight + deckImg.height / imageScale + gridTopBottomPadding ;
-    //     } else if (rank == 3) {
-    //         startPosX = 5 * deckImg.width / imageScale / 2 + 6.5 * gridUnitWidth ;
-    //         startPosY = handCardSectionHeight + deckImg.height / imageScale + gridTopBottomPadding ;
-    //     }
-
-    //     if (currPlayer) {
-    //             //if (rank == 1) {
-    //                 startPosY += (collectionCardSectionHeight + mainGameFloorSectionHeight);
-    //                 // handCardSectionHeight + collectionCardSectionHeight + mainGameFloorSectionHeight + deckImg.height / imageScale / 2 + gridTopBottomPadding;
-    //             // } else {
-
-    //             // }
-
-    //     }
-
-
-    //     svgContainer.append('svg:image')
-    //                     .attr('xlink:href', imgSrc)
-    //                     .attr('x', startPosX + cardPosWithin * deckImg.width / imageScale / 2)
-    //                     .attr('y', startPosY)
-    //                     .attr('width', deckImg.width / imageScale)
-    //                     .attr('height', deckImg.height / imageScale);
-
-    // }
-
-
-
-    // let g1 = svgContainer.append('g').attr('id', 'g1')
-    //                     .append('svg:image')
-    //                     .attr('id', 'img1')
-    //                     .attr('xlink:href', './assets/converted/_12_4.svg')
-    //                     .attr('x', 5 * deckImg.width / imageScale / 2 + 6.5 * gridUnitWidth  + 0 * deckImg.width / imageScale / 2)
-    //                     .attr('y', handCardSectionHeight + deckImg.height / imageScale + gridTopBottomPadding)
-    //                     .attr('width', deckImg.width / imageScale)
-    //                     .attr('height', deckImg.height / imageScale);
-    
-
-
-    // d3.select('#translateBtn').on('click', () => {
-    //     g1.transition()
-    //     //.attr('x', 5 * deckImg.width / imageScale / 2 + 6.5 * gridUnitWidth  + 0 * deckImg.width / imageScale / 2)
-    //     .attr('y', handCardSectionHeight + deckImg.height / imageScale + gridTopBottomPadding + collectionCardSectionHeight + mainGameFloorSectionHeight);
-    // });
-
-    // d3.select('#img1').style('stroke', 'yellow');
 
 
 //});

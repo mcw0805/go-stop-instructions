@@ -169,7 +169,7 @@ function createTtadakExample(svgContainer) {
 
 }
 
-d3.select('#executeBtn').on('click', () => {
+d3.select('#ttadakPlayBtn').on('click', () => {
     // translate hand card to floor
     let fc1 = getFloorCoordinate(ttadakExSvgContainer, floorPos=1, cardPosWithin=0)
 
@@ -220,8 +220,8 @@ addAllCardsAsPattern();
 
 drawFloorSections(sseulExSvgContainer, sseulExDiv);
 drawCenterRemainingDeck(sseulExSvgContainer, 's');
-createTtadakExample(sseulExSvgContainer);
-function createTtadakExample(svgContainer) {
+createSseulExample(sseulExSvgContainer);
+function createSseulExample(svgContainer) {
     // opponent card
     drawHandCardFaceDownSvg(svgContainer, 8)
 
@@ -274,7 +274,7 @@ function createTtadakExample(svgContainer) {
 
 }
 
-d3.select('#executeBtn').on('click', () => {
+d3.select('#sseulPlayBtn').on('click', () => {
     // translate hand card to floor
     let fc1 = getFloorCoordinate(sseulExSvgContainer, floorPos=1, cardPosWithin=1)
 
@@ -324,8 +324,8 @@ addAllCardsAsPattern();
 
 drawFloorSections(jjokExSvgContainer, jjokDiv);
 drawCenterRemainingDeck(jjokExSvgContainer, 'j');
-createTtadakExample(jjokExSvgContainer);
-function createTtadakExample(svgContainer) {
+createJjokExample(jjokExSvgContainer);
+function createJjokExample(svgContainer) {
     // opponent card
     drawHandCardFaceDownSvg(svgContainer, 7)
 
@@ -372,7 +372,7 @@ function createTtadakExample(svgContainer) {
 
 }
 
-d3.select('#executeBtn').on('click', () => {
+d3.select('#jjokPlayBtn').on('click', () => {
     // translate hand card to floor
     let fc1 = getFloorCoordinate(jjokExSvgContainer, floorPos=1, cardPosWithin=0)
 
@@ -419,8 +419,8 @@ addAllCardsAsPattern();
 
 drawFloorSections(ppukExSvgContainer, ppukExDiv);
 drawCenterRemainingDeck(ppukExSvgContainer, 'p');
-createTtadakExample(ppukExSvgContainer);
-function createTtadakExample(svgContainer) {
+createPpukExample(ppukExSvgContainer);
+function createPpukExample(svgContainer) {
     // opponent card
     drawHandCardFaceDownSvg(svgContainer, 7)
 
@@ -469,7 +469,7 @@ function createTtadakExample(svgContainer) {
 
 }
 
-d3.select('#executeBtn').on('click', () => {
+d3.select('#ppukPlayBtn').on('click', () => {
     // translate hand card to floor
     let fc1 = getFloorCoordinate(ppukExSvgContainer, floorPos=1, cardPosWithin=1)
 
