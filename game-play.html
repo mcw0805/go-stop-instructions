@@ -237,7 +237,8 @@
         let matchExDiv = body.select('#matchEx1');
         let matchExSvgContainer = createSvgElement(body, 'matchEx1');
 
-        addAllCardsAsPattern();
+        addAllCardsAsPattern('examineEx1');
+        addAllCardsAsPattern('matchEx1', 'm1');
 
         drawFloorSections(examineEx1SvgContainer, examineEx1Div);
         drawCenterRemainingDeck(examineEx1SvgContainer);
@@ -323,7 +324,7 @@
             // flip and move cards to collection
             let centerCoord = getCenterCoord(matchExSvgContainer);
             setTimeout(() => {
-                drawCardAsGroup(matchExSvgContainer, centerCoord['x'], centerCoord['y'], '_3_3', groupId='_3_3gm1');
+                drawCardAsGroup(matchExSvgContainer, centerCoord['x'], centerCoord['y'], '_3_3', groupId='_3_3gm1', 'm1');
                 let fc2 = getFloorCoordinate(matchExSvgContainer, floorPos=8, cardPosWithin=0);
 
                 setTimeout(() => {
@@ -338,10 +339,6 @@
                 }, 400); 
             }, 500);
             
-
-        });
-
-        $('#turnSection').on('shown.bs.collapse', () => {
 
         });
 

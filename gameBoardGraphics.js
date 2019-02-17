@@ -231,6 +231,7 @@
     }
 
     function addAllCardsAsPattern(divId, groupIdSuffix='') {
+
         addCardImgAsPattern(divId, cardImgSrcDict[0][0], `back${groupIdSuffix}`);
 
         for (let i = 1; i <= 12; i++) {
@@ -245,6 +246,7 @@
 
     // appends a pattern to a particular div def
     function addCardImgAsPattern(divId, imgSrc=baseImg.src, id) {
+        console.log('xxx')
         d3.select(`#${divId} defs`)
             .append('pattern')
             .attr('id', id)

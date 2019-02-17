@@ -244,18 +244,18 @@
 
         let body = d3.select('body');
         let floorPlan = body.select('#floorPlan');
-        let svgContainer = createSvgElement(body, 'floorPlan');
+        let floorContainer = createSvgElement(body, 'floorPlan');
 
        
-        addAllCardsAsPattern();
-        drawFloorSections(svgContainer, floorPlan);
+        addAllCardsAsPattern(divId='floorPlan');
+        drawFloorSections(floorContainer, floorPlan);
 
-        initialFloorSetUp();
-        function initialFloorSetUp() {
+        initialFloorSetUp(floorContainer);
+        function initialFloorSetUp(svgContainer) {
             // center deck
             drawCenterRemainingDeck(svgContainer);
             // opponent card
-            drawHandCardFaceDownSvg(svgContainer)
+            drawHandCardFaceDownSvg(svgContainer);
 
             // opponent collection
             drawCollectionCard(svgContainer, 0, '_8_1', cardPosWithin=0)
