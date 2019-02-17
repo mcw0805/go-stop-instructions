@@ -1,0 +1,63 @@
+.intro-fill {
+    width: 100%;
+    background-color: green;
+    height: 400px;
+}
+
+.hwatu-img-reg {
+    width: 10%;
+}
+
+.hwatu-img-med {
+    width: 15%;
+}
+
+.hwatu-img-table {
+    width: 15%;
+}
+
+.section-row {
+    border: solid 1px lightgrey;
+    border-radius: 1px;
+}
+
+/*a:hover  .section-heading {
+    text-decoration: none ;
+}*/
+
+a.section-heading-click {
+    text-decoration: none ;
+}
+
+.card-subtitle {
+    margin-top: 0.4rem;
+}
+
+.keyword {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.foreign-word {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.text-italicize {
+    font-style: italic;
+}
+
+.text-bold {
+    font-weight: bold; 
+}
+
+.btn-expand {
+    display: block;
+    width: 100%;
+    margin: 0;
+    height: inherit;
+}
+
+.card .card-header-shrink {
+    padding: 0;
+}

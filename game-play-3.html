@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title></title>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <header>
+        Header
+
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <h4 class="card-title">Special Events</h4>
+
+            <div class="card-body">
+
+                <p>
+                    Below defines the terminologies to understand the steps needed for the players in their turn.
+                </p>
+
+                <br>
+
+                <!-- <div class="svg-container" id="bombEx" style="position:relative; width:100%"></div> -->
+                <!-- <div class="svg-container" id="ttadakEx" style="position:relative; width:100%"></div> -->
+                <!-- <div class="svg-container" id="sseulEx" style="position:relative; width:100%"></div> -->
+                <!-- <div class="svg-container" id="jjokEx" style="position:relative; width:100%"></div> -->
+                <!-- <div class="svg-container" id="ppukEx" style="position:relative; width:100%"></div> -->
+                <div class="svg-container" id="collectingPpukEx" style="position:relative; width:100%"></div>
+                <br>
+                <button id="executeBtn">click</button>
+
+                <div style="display:none;"><img id="source" src="./assets/_back.svg"></div>
+
+
+                <h6 class="card-subtitle">Special Events</h6>
+                    
+                <p>
+                    Below describes any special events that may be instigated by the current player or occur by chance.
+                </p>
+                
+                <!-- begin accordion  -->
+                <div class="accordion" id="spcialEventsAccordion">
+
+                    <!-- bomb card -->
+                    <div class="card">
+                        <div class="card-header card-header-shrink" id="bombHeader">
+                            <h5 class="mb-0">
+                                <button class="btn btn-expand" type="button" data-toggle="collapse" data-target="#bombCollapse" aria-expanded="false" aria-controls="bombCollapse">
+                                  Place a Bomb
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="bombCollapse" class="collapse false" aria-labelledby="bombHeader" data-parent="#spcialEventsAccordion">
+                            <div class="card-body">
+                                <ul>
+                                    <li>
+                                        Condition: Player holds a bomb. One of the floor cards is the remaining month card that matches the bomb.
+                                    </li>
+                                    <li>
+                                        Action: Player places down all three cards of the bomb to match the floor card.
+                                    </li>
+                                    <li>
+                                        Result: 
+                                        <ul>
+                                            <li>Player extorts one card from the opponent’s pi pile.</li>
+                                            <li>Player has two chances to just flip the card from the remaining deck without matching or discarding in their subsequent turns.</li>
+                                            <li>If the player wins, their points are doubled.</li>
+                                        </ul>
+                                        
+                                    </li>
+                                </ul>
+
+                                <!-- <div id="examineEx1" style="position: relative; width: 100%;"></div> -->
+
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <!-- shake card -->
+                    <div class="card">
+                        <div class="card-header card-header-shrink" id="shakeHeader">
+                            <h5 class="mb-0">
+                                <button class="btn btn-expand" type="button" data-toggle="collapse" data-target="#shakeCollapse" aria-expanded="false" aria-controls="shakeCollapse">
+                                  Shake
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="shakeCollapse" class="collapse false" aria-labelledby="shakeHeader" data-parent="#spcialEventsAccordion">
+                            <div class="card-body">
+                                <ul>
+                                    <li>
+                                        Condition: Player holds a bomb. Floor does <i>not</i> have the remaining month card.
+                                    </li>
+                                    <li>
+                                        Action: Player must reveal all the three cards to the opponent player. Player can decide to discard one of the revealed cards or another card.
+                                    </li>
+                                    <li>
+                                        Result: 
+                                        <ul>
+                                            <li>If the player wins, their points are doubled.</li>
+                                        </ul>
+                                        
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <!-- ppuk card -->
+                    <div class="card">
+                        <div class="card-header card-header-shrink" id="ppukHeader">
+                            <h5 class="mb-0">
+                                <button class="btn btn-expand" type="button" data-toggle="collapse" data-target="#ppukCollapse" aria-expanded="false" aria-controls="ppukCollapse">
+                                  Ppuk
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="ppukCollapse" class="collapse false" aria-labelledby="ppukHeader" data-parent="#spcialEventsAccordion">
+                            <div class="card-body">
+                                <ul>
+                                    <li>
+                                        Condition: Player has a match of a card from hand to the floor.
+                                    </li>
+                                    <li>
+                                        Action: Player matches their hand card to the floor card and flips, but flipped card is the same month card.
+                                    </li>
+                                    <li>
+                                        Result: 
+                                        <ul>
+                                            <li>The floor is left empty after the player collects their matched cards.</li>
+                                            <li>Player extorts one card from the opponent’s pi pile.</li>
+                                        </ul>
+                                        
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- sseul card -->
+                    <div class="card">
+                        <div class="card-header card-header-shrink" id="sseulHeader">
+                            <h5 class="mb-0">
+                                <button class="btn btn-expand" type="button" data-toggle="collapse" data-target="#sseulCollapse" aria-expanded="false" aria-controls="sseulCollapse">
+                                  Sseul
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="sseulCollapse" class="collapse false" aria-labelledby="sseulHeader" data-parent="#spcialEventsAccordion">
+                            <div class="card-body">
+                                <ul>
+                                    <li>
+                                        Condition: Floor has only two cards.
+                                    </li>
+                                    <li>
+                                        Action: Player matches one of the floor cards with their hand card, and the flipped card is the remaining floor card.
+                                    </li>
+                                    <li>
+                                        Result: 
+                                        <ul>
+                                            <li>The floor is left empty after the player collects their matched cards.</li>
+                                            <li>Player extorts one card from the opponent’s pi pile.</li>
+                                        </ul>
+                                        
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- ttadak card -->
+                    <div class="card">
+                        <div class="card-header card-header-shrink" id="ttadakHeader">
+                            <h5 class="mb-0">
+                                <button class="btn btn-expand" type="button" data-toggle="collapse" data-target="#ttadakCollapse" aria-expanded="false" aria-controls="ttadakCollapse">
+                                  Ttadak
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="ttadakCollapse" class="collapse false" aria-labelledby="ttadakHeader" data-parent="#spcialEventsAccordion">
+                            <div class="card-body">
+                                <ul>
+                                    <li>
+                                        Condition: Floor has two same month cards, but there also may be other cards.
+                                    </li>
+                                    <li>
+                                        Action: Player matches one of the floor cards with their hand card, and the flipped card is the remaining floor card.
+                                    </li>
+                                    <li>
+                                        Result: 
+                                        <ul>
+                                            <li>The floor is left empty after the player collects their matched cards.</li>
+                                            <li>Player extorts one card from the opponent’s pi pile.</li>
+                                        </ul>
+                                        
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+
+                    <!-- jjok card -->
+                    <div class="card">
+                        <div class="card-header card-header-shrink" id="jjokHeader">
+                            <h5 class="mb-0">
+                                <button class="btn btn-expand" type="button" data-toggle="collapse" data-target="#jjokCollapse" aria-expanded="false" aria-controls="jjokCollapse">
+                                  Jjok
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="jjokCollapse" class="collapse false" aria-labelledby="jjokHeader" data-parent="#spcialEventsAccordion">
+                            <div class="card-body">
+                                <ul>
+                                    <li>
+                                        Condition: Floor has two same month cards, but there also may be other cards.
+                                    </li>
+                                    <li>
+                                        Action: Player matches one of the floor cards with their hand card, and the flipped card is the remaining floor card.
+                                    </li>
+                                    <li>
+                                        Result: 
+                                        <ul>
+                                            <li>The floor is left empty after the player collects their matched cards.</li>
+                                            <li>Player extorts one card from the opponent’s pi pile.</li>
+                                        </ul>
+                                        
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <!-- ja-ppuk card -->
+                    <div class="card">
+                        <div class="card-header card-header-shrink" id="jappukHeader">
+                            <h5 class="mb-0">
+                                <button class="btn btn-expand" type="button" data-toggle="collapse" data-target="#jappukCollapse" aria-expanded="false" aria-controls="jappukCollapse">
+                                  Ja-ppuk
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="jappukCollapse" class="collapse false" aria-labelledby="jappukHeader" data-parent="#spcialEventsAccordion">
+                            <div class="card-body">
+                                <ul>
+                                    <li>
+                                        Condition: Ppuk pile exists on the floor, and it was generated by the current player.
+                                    </li>
+                                    <li>
+                                        Action: After the player matches or discards, the flipped card is the month card that matches the ppuk.
+                                    </li>
+                                    <li>
+                                        Result: 
+                                        <ul>
+                                            <li>Player extorts two cards from the opponent’s pi pile.</li>
+                                        </ul>
+                                        
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                </div> <!-- end accordion -->
+
+                <hr>
+
+                <p>
+                    
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="./gameBoardGraphics.js"></script>
+
+    <script type="text/javascript">
+
+    $(document).ready(function() {
+
+        let body = d3.select('body');
+let collectingPpukExDiv = body.select('#collectingPpukEx');
+let collectingPpukExSvgContainer = createSvgElement(body, 'collectingPpukEx');
+addAllCardsAsPattern();
+
+drawFloorSections(collectingPpukExSvgContainer, collectingPpukExDiv);
+drawCenterRemainingDeck(collectingPpukExSvgContainer, 'cp');
+createTtadakExample(collectingPpukExSvgContainer);
+function createTtadakExample(svgContainer) {
+    // opponent card
+    drawHandCardFaceDownSvg(svgContainer, 6)
+
+
+    // collection cards for opponent
+    drawCollectionCard(svgContainer, 1, '_12_2', cardPosWithin=0, currPlayer=false, piLevel=0, groupIdSuffix='cp')
+    drawCollectionCard(svgContainer, 1, '_7_1', cardPosWithin=1, currPlayer=false, piLevel=0, groupIdSuffix='cp')
+    drawCollectionCard(svgContainer, 1, '_4_1', cardPosWithin=2, currPlayer=false, piLevel=0, groupIdSuffix='cp')
+    
+    drawCollectionCard(svgContainer, 2, '_12_3', cardPosWithin=0, currPlayer=false, piLevel=0, groupIdSuffix='cp')
+    drawCollectionCard(svgContainer, 2, '_2_2', cardPosWithin=1, currPlayer=false, piLevel=0, groupIdSuffix='cp')
+    drawCollectionCard(svgContainer, 2, '_7_2', cardPosWithin=2, currPlayer=false, piLevel=0, groupIdSuffix='cp')
+    drawCollectionCard(svgContainer, 2, '_4_2', cardPosWithin=3, currPlayer=false, piLevel=0, groupIdSuffix='cp')
+    drawCollectionCard(svgContainer, 2, '_10_2', cardPosWithin=4, currPlayer=false, piLevel=0, groupIdSuffix='cp')
+
+    drawCollectionCard(svgContainer, 3, '_10_3', cardPosWithin=1, currPlayer=false, piLevel=0, groupIdSuffix='cp')
+    drawCollectionCard(svgContainer, 3, '_2_4', cardPosWithin=2, currPlayer=false, piLevel=0, groupIdSuffix='cp')
+
+
+    // collection for current player
+    drawCollectionCard(svgContainer, 1, '_9_1', cardPosWithin=0, currPlayer=true, piLevel=0, groupIdSuffix='cp')    
+    drawCollectionCard(svgContainer, 1, '_5_1', cardPosWithin=1, currPlayer=true, piLevel=0, groupIdSuffix='cp')
+
+    drawCollectionCard(svgContainer, 3, '_11_4', cardPosWithin=0, currPlayer=true, piLevel=0, groupIdSuffix='cp')
+    drawCollectionCard(svgContainer, 3, '_11_3', cardPosWithin=1, currPlayer=true, piLevel=0, groupIdSuffix='cp')
+    drawCollectionCard(svgContainer, 3, '_5_3', cardPosWithin=2, currPlayer=true, piLevel=0, groupIdSuffix='cp')
+    drawCollectionCard(svgContainer, 3, '_9_3', cardPosWithin=3, currPlayer=true, piLevel=0, groupIdSuffix='cp')
+
+    // curr player hand card
+    drawHandCardForCurrPlayer(svgContainer, '_2_1', position=0, groupIdSuffix='cp') 
+    drawHandCardForCurrPlayer(svgContainer, '_3_4', position=1, groupIdSuffix='cp') 
+    drawHandCardForCurrPlayer(svgContainer, '_6_1', position=2, groupIdSuffix='cp') 
+    drawHandCardForCurrPlayer(svgContainer, '_6_3', position=3, groupIdSuffix='cp') 
+    drawHandCardForCurrPlayer(svgContainer, '_7_3', position=4, groupIdSuffix='cp') 
+    drawHandCardForCurrPlayer(svgContainer, '_12_1', position=5, groupIdSuffix='cp') 
+
+    // floor cards
+    drawFloorCard(svgContainer, '_3_1', floorPos=1,cardPosWithin=0, groupIdSuffix='cp')
+    drawFloorCard(svgContainer, '_3_2', floorPos=1,cardPosWithin=1, groupIdSuffix='cp')
+    drawFloorCard(svgContainer, '_3_3', floorPos=1,cardPosWithin=2, groupIdSuffix='cp') 
+    drawFloorCard(svgContainer, '_1_2', floorPos=3, cardPosWithin=0,groupIdSuffix='cp') 
+    drawFloorCard(svgContainer, '_11_2', floorPos=4,cardPosWithin=0, groupIdSuffix='cp') 
+    drawFloorCard(svgContainer, '_2_3', floorPos=5,cardPosWithin=0, groupIdSuffix='cp') 
+    drawFloorCard(svgContainer, '_8_2', floorPos=6, cardPosWithin=0,groupIdSuffix='cp') 
+    
+    outlineCardGroup('_3_4', groupIdSuffix='cp') 
+
+}
+
+d3.select('#executeBtn').on('click', () => {
+    // translate hand card to floor
+    let fc1 = getFloorCoordinate(collectingPpukExSvgContainer, floorPos=1, cardPosWithin=3)
+
+    translateG('_3_4', 'cp', fc1['f_x'], fc1['f_y'] );
+    
+    // flip and move cards to collection
+    let centerCoord = getCenterCoord(collectingPpukExSvgContainer);
+    setTimeout(() => {
+        drawCardAsGroup(collectingPpukExSvgContainer, centerCoord['x'], centerCoord['y'], '_12_4', groupId='_12_4gcp');
+        let fcPos1 = getFloorCoordinate(collectingPpukExSvgContainer, floorPos=8, cardPosWithin=0);
+
+        setTimeout(() => {
+            translateG('_12_4', 'cp', fcPos1['f_x'] , fcPos1['f_y']);
+
+            setTimeout(() => {
+                let cPos1 = getCollectionCardPos(0, 0, piLevel=0); // 3_1
+                let cPos2 = getCollectionCardPos(2, 0, piLevel=0); // 3_2
+                let cPos3 = getCollectionCardPos(3, 0, piLevel=1); // 3_3
+                let cPos4 = getCollectionCardPos(3, 4, piLevel=0); // 3_4
+
+                translateG('_3_1', 'cp', cPos1['c_x'], cPos1['c_y']);
+                translateG('_3_2', 'cp', cPos2['c_x'], cPos2['c_y']);
+                translateG('_3_3', 'cp', cPos3['c_x'], cPos3['c_y']);
+                translateG('_3_4', 'cp', cPos4['c_x'], cPos4['c_y']);
+                outlineCardGroup('_3_4', groupIdSuffix='cp', 'none')
+
+                setTimeout(() => {
+                    let extortTo = getCollectionCardPos(3, 1, piLevel=1, currPlayer=true); 
+                    translateG('_2_4', 'cp', extortTo['c_x'], extortTo['c_y']);
+
+                }, 600);
+            }, 600);
+
+
+        }, 1000); 
+
+        
+    }, 800);
+
+    
+});
+
+
+
+
+    });
+    
+    
+    </script>
+
+</body>
+
+</html>

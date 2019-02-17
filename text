@@ -1,0 +1,20 @@
+        1: [`${cardImgRootDir}/_1_1.svg`, `${cardImgRootDir}/_1_2.svg`, `${cardImgRootDir}/_1_3.svg`, `${cardImgRootDir}/_1_4.svg`],
+        2: [`${cardImgRootDir}/_2_1.svg`, `${cardImgRootDir}/_2_2.svg`, `${cardImgRootDir}/_2_3.svg`, `${cardImgRootDir}/_2_4.svg`],
+        3: [`${cardImgRootDir}/_3_1.svg`, `${cardImgRootDir}/_3_2.svg`, `${cardImgRootDir}/_3_3.svg`, `${cardImgRootDir}/_3_4.svg`],
+        4: [`${cardImgRootDir}/_4_1.svg`, `${cardImgRootDir}/_4_2.svg`, `${cardImgRootDir}/_4_3.svg`, `${cardImgRootDir}/_4_4.svg`],
+        5: [`${cardImgRootDir}/_5_1.svg`, `${cardImgRootDir}/_5_2.svg`, `${cardImgRootDir}/_5_3.svg`, `${cardImgRootDir}/_5_4.svg`],
+        6: [`${cardImgRootDir}/_6_1.svg`, `${cardImgRootDir}/_6_2.svg`, `${cardImgRootDir}/_6_3.svg`, `${cardImgRootDir}/_6_4.svg`],
+        7: [`${cardImgRootDir}/_7_1.svg`, `${cardImgRootDir}/_7_2.svg`, `${cardImgRootDir}/_7_3.svg`,`${cardImgRootDir}/_7_4.svg`],
+        8: [`${cardImgRootDir}/_8_1.svg`, `${cardImgRootDir}/_8_2.svg`, `${cardImgRootDir}/_8_3.svg`,`${cardImgRootDir}/_8_4.svg`],
+        9: [`${cardImgRootDir}/_9_1.svg`, `${cardImgRootDir}/_9_2.svg`, `${cardImgRootDir}/_9_3.svg`,`${cardImgRootDir}/_9_4.svg`],
+        10: [`${cardImgRootDir}/_10_1.svg`, `${cardImgRootDir}/_10_2.svg`, `${cardImgRootDir}/_10_3.svg`, `${cardImgRootDir}/_10_4.svg`],
+        11: [`${cardImgRootDir}/_11_1.svg`, `${cardImgRootDir}/_11_2.svg`, `${cardImgRootDir}/_11_3.svg`, `${cardImgRootDir}/_11_4.svg`],
+        12: [`${cardImgRootDir}/_12_1.svg`, `${cardImgRootDir}/_12_2.svg`, `${cardImgRootDir}/_12_3.svg`, `${cardImgRootDir}/_12_4.svg`],
+
+            // drawHandCardForCurrPlayer(svgContainer, '_1_3', position=0) 
+            // drawHandCardForCurrPlayer(svgContainer, '_3_3', position=1) 
+            // drawHandCardForCurrPlayer(svgContainer, '_7_3', position=2) 
+            // drawHandCardForCurrPlayer(svgContainer, '_8_2', position=3) 
+            // drawHandCardForCurrPlayer(svgContainer, '_9_1', position=4) 
+            // drawHandCardForCurrPlayer(svgContainer, '_10_2', position=5) 
+            // drawHandCardForCurrPlayer(svgContainer, '_11_3', position=6) 

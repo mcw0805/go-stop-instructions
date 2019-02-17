@@ -1,0 +1,29 @@
+<svg viewBox="0 0 153.07 238.11" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="Gradient1">
+      <stop offset="5%" stop-color="white"/>
+      <stop offset="95%" stop-color="#ed1c24"/>
+    </linearGradient>
+
+<!--     <pattern id="Pattern" x="0" y="0" width=".006" height=".006">
+      <rect fill="#ed1c24"  width="153.07" height="238.11"/>
+      <circle cx=".66" cy=".66" r="0.4" fill="url(#Gradient1)" fill-opacity="0.5"/>
+    </pattern> -->
+<!--     <pattern id="Pattern" x="0" y="0" width=".06" height=".06">
+      <rect fill="#ed1c24"  width="153.07" height="238.11"/>
+      <circle cx="6.6" cy="6.6" r="4" fill="url(#Gradient1)" fill-opacity="0.5"/>
+    </pattern> -->
+
+<!--     <pattern id="Pattern" x="0" y="0" width=".077" height="0.05">
+        <rect fill="#ed1c24"  width="153.07" height="238.11"/>
+        <circle cx="5.8" cy="5.8" r="5" fill="url(#Gradient1)" fill-opacity="0.5"/>
+    </pattern> -->
+    <pattern id="Pattern" x="0" y="0" width=".0704" height="0.0523">
+      <rect fill="#ed1c24"  width="153.07" height="238.11"/>
+      <circle cx="7" cy="7" r="4.8" fill="url(#Gradient1)" fill-opacity="0.5"/>
+    </pattern>
+
+  </defs>
+
+  <rect fill="url(#Pattern)" width="153.07" height="238.11"/>
+</svg>

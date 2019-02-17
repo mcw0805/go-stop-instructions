@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title></title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+    <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <header>
+        Header
+
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <h4 class="card-title">Hwatu Deck Breakdown</h4>
+
+            <div class="card-body">
+                <p>
+                    A deck of hwatu is comprised of
+                    <ul>
+                        <li>Month Cards (48)</li>
+                        <li>Jokers Cards (up to 6)</li>
+                    </ul>
+                </p>
+
+                <br>
+
+                <a class="section-heading-click" data-toggle="collapse" role="button" href="#monthCardSection" aria-expanded="false" aria-controls="monthCardSection">
+                    <div class="d-flex flex-row section-row">
+                        <div class="p-2"><h5 class="card-subtitle section-heading">Month Cards</h5></div>
+                        <div class="p-2 ml-auto">
+                            <i class="fas fa-chevron-circle-down fa-2x"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="collapse p-2" id="monthCardSection">
+                    <p>
+                        Month cards are a group of 4 cards, where each group corresponds to the 12 months in the Gregorian calendar (i.e. January to December). Hence, hence there are 4 x 12 = 48 cards. 
+                    </p>
+
+                    <p>
+                        Within the month group, each card associated with a rank that determine their value or worthiness. 
+                    </p>
+
+                    <!-- JS will fill the table -->
+                    <table id="all-cards" class="table">
+                        <thead>
+                            <tr>
+                              <th scope="col">Month</th>
+                              <th scope="col">Plant</th>
+                              <th scope="col">Card Picture</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+
+                    <h6 class="card-subtitle">Ranks</h6>
+                    
+                    <p>
+                        Each of the month card has a rank associated with it. Below lists the rankings from what is considered most worthy to least worthy.
+                    </p>
+                    
+                    <!-- begin accordion  -->
+                    <div class="accordion" id="rankAccordion">
+
+                        <!-- kwang card -->
+                        <div class="card">
+                            <div class="card-header" id="kwangHeader">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#kwangRankCollapse" aria-expanded="false" aria-controls="kwangRankCollapse">
+                                      Kwang / Bright
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div id="kwangRankCollapse" class="collapse false" aria-labelledby="kwangHeader" data-parent="#rankAccordion">
+                                <div class="card-body">
+                                        <img class="hwatu-img-reg" src="https://github.gatech.edu/cmin8/lmc-3403-m2/blob/master/assets/converted/_5_1.svg">
+                                    <!-- <img class="hwatu-img-reg" src="./assets/converted/_1_1.svg"> -->
+                                    <img class="hwatu-img-reg" src="./assets/converted/_3_1.svg">
+                                    <img class="hwatu-img-reg" src="./assets/converted/_8_1.svg">
+                                    <img class="hwatu-img-reg" src="./assets/converted/_11_1.svg">
+                                    <img class="hwatu-img-reg" src="./assets/converted/_12_1.svg">
+                                    
+                                    <ul>
+                                        <li>
+                                            Characteristics: Marked with 光 symbol. This symbol is pronounced as “kwang” in Korean, meaning “bright.”
+                                        </li>
+                                        <li>
+                                            Number of cards: 5
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- yeol card -->
+                        <div class="card">
+                            <div class="card-header" id="yeolHeader">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#yeolRankCollapse" aria-expanded="false" aria-controls="yeolRankCollapse">
+                                      Yeol / Tens
+                                    </button>
+                                </h5>
+                            </div>
+                            
+                            <div id="yeolRankCollapse" class="collapse" aria-labelledby="yeolHeader" data-parent="#rankAccordion">
+                                <div class="card-body">
+                                    <img class="hwatu-img-reg" src="assets/converted/_2_1.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_4_1.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_5_1.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_6_1.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_7_1.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_8_2.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_9_1.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_10_1.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_12_1.svg">
+                                    <ul>
+                                        <li>
+                                            Characteristics: Marked with an animal. The only exception that does not have an animal is September.
+                                        </li>
+                                        <li>
+                                            Number of cards: 9
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- tti card -->
+                        <div class="card">
+                            <div class="card-header" id="ttiHeader">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#ttiRankCollapse" aria-expanded="false" aria-controls="ttiRankCollapse">
+                                      Tti / Ribbon
+                                    </button>
+                                </h5>
+                            </div>
+                            
+                            <div id="ttiRankCollapse" class="collapse" aria-labelledby="ttiHeader" data-parent="#rankAccordion">
+                                <div class="card-body">
+                                    <img class="hwatu-img-reg" src="assets/converted/_1_2.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_2_2.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_3_2.svg">
+
+                                    <img class="hwatu-img-reg" src="assets/converted/_6_2.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_9_2.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_10_2.svg">
+
+                                    <img class="hwatu-img-reg" src="assets/converted/_4_2.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_5_2.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_7_2.svg">
+                                    
+                                    <img class="hwatu-img-reg" src="assets/converted/_12_3.svg">
+                                    <ul>
+                                        <li>
+                                            Characteristics: Marked with a ribbon.
+                                        </li>
+                                        <li>
+                                            Number of cards: 10
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- ssangpi card -->
+                        <div class="card">
+                            <div class="card-header" id="ssangpiHeader">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#ssangpiRankCollapse" aria-expanded="false" aria-controls="ssangpiRankCollapse">
+                                      Ssangpi / Double Pi
+                                    </button>
+                                </h5>
+                            </div>
+                            
+                            <div id="ssangpiRankCollapse" class="collapse" aria-labelledby="ssangpiHeader" data-parent="#rankAccordion">
+                                <div class="card-body">
+                        
+                                    <img class="hwatu-img-reg" src="assets/converted/_11_2.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_12_4.svg">
+
+                                    <ul>
+                                        <li>
+                                            Characteristics: Card markings vary. Considered as a special type of pi card (described below). When calculating points in Go-Stop, it is double counted (will be explained in the later section).
+                                        </li>
+                                        <li>
+                                            Number of cards: 2 or more.
+                                        </li>
+                                    </ul>
+
+                                    <h6>
+                                        Special Cases
+                                    </h6>
+                                    <img class="hwatu-img-reg" src="assets/converted/_9_1.svg">
+                                    <ul>
+                                        <li>
+                                            September yeol can be used as yeol or ssangpi. Depending on the region or what the player agrees on, the player makes such choice in ONE of the following manners: 
+                                            <ul>
+                                                <li>When they collect the card.</li>
+                                                <li>Anytime during the game.</li>
+                                                <li>When a player wins.</li>
+                                            </ul>
+
+                                            But if the player declares their decision, the choice remains permanent. This means that if it is used as ssangpi, the player cannot change it to yeol. 
+                                        </li>
+                                        <br>
+                                        <p>insert joker pic here</p>
+                                        <li>
+                                            Jokers may act as single pi, double pi, or triple pi. This is described further in the Joker Cards section. 
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- pi card -->
+                        <div class="card">
+                            <div class="card-header" id="piHeader">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#piRankCollapse" aria-expanded="false" aria-controls="piRankCollapse">
+                                      Pi / Shell
+                                    </button>
+                                </h5>
+                            </div>
+                            
+                            <div id="piRankCollapse" class="collapse" aria-labelledby="piHeader" data-parent="#rankAccordion">
+                                <div class="card-body">
+                                    <img class="hwatu-img-reg" src="assets/converted/_1_3.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_1_4.svg">
+
+                                    <img class="hwatu-img-reg" src="assets/converted/_2_3.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_2_4.svg">
+
+                                    <img class="hwatu-img-reg" src="assets/converted/_3_3.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_3_4.svg">
+
+                                    <img class="hwatu-img-reg" src="assets/converted/_4_3.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_4_4.svg">
+                                    <br>
+                                    <img class="hwatu-img-reg" src="assets/converted/_5_3.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_5_4.svg">
+
+                                    <img class="hwatu-img-reg" src="assets/converted/_6_3.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_6_4.svg">
+
+                                    <img class="hwatu-img-reg" src="assets/converted/_7_3.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_7_4.svg">
+
+                                    <img class="hwatu-img-reg" src="assets/converted/_8_3.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_8_4.svg">
+                                    <br>
+                                    <img class="hwatu-img-reg" src="assets/converted/_9_3.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_9_4.svg">
+
+                                    <img class="hwatu-img-reg" src="assets/converted/_10_3.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_10_4.svg">
+
+                                    <img class="hwatu-img-reg" src="assets/converted/_11_3.svg">
+                                    <img class="hwatu-img-reg" src="assets/converted/_11_4.svg">
+
+                                    <ul>
+                                        <li>
+                                            Characteristics: No markings—only has the base picture of the plant. Within the same month, pi cards have the same rank.
+                                        </li>
+                                        <li>
+                                            Number of cards: 24
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- end accordion -->
+                
+                </div> <!-- end monthCardSection -->
+
+                <a class="section-heading-click" data-toggle="collapse" role="button" href="#jokerCardSection" aria-expanded="false" aria-controls="jokerCardSection">
+                    <div class="d-flex flex-row section-row">
+                        <div class="p-2"><h5 class="card-subtitle">Joker Cards</h5></div>
+                        <div class="p-2 ml-auto">
+                            <i class="fas fa-chevron-circle-down fa-2x"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="collapse p-2" id="jokerCardSection">
+                    <p>
+                        A standard deck of hwatu usually comes with 5 to 6 jokers. The jokers mary vary depending on the brand.
+                    </p>
+
+                    <p>
+                       Examples of joker cards:
+                        <ul>
+                            <li>Plus Pi</li>
+                            <li>Two Pi</li>
+                            <li>Three Pi</li>
+                            <li>Block Bright</li>
+                            <li>Congratulating Pi</li>
+                        </ul>
+                    </p>
+
+                    <p>
+                        The players may decide to not use any or use only some. As an example, many Internet Go-Stop games use two Two Pi jokers and one Three Pi.
+                    </p>
+
+                    <p>
+                        There is also no obligation for the players to abide to the joker labels. They may decide to use the Three Pi as another Two Pi.
+                    </p>
+                </div>
+
+                <hr>
+
+                <p>
+                    
+                </p>
+
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        let months = {
+            1: ["January", "Pine"],
+            2: ["February", "Plum Blossom"],
+            3: ["March", "Cherry Blosoom"],
+            4: ["April", "Wisteria"],
+            5: ["May", "Iris"],
+            6: ["June", "Peony"],
+            7: ["July", "Bush Clover"],
+            8: ["August", "Susuki grass"],
+            9: ["September", "Chrysanthemum"],
+            10: ["October", "Maple"],
+            11: ["November", "Paulownia"],
+            12: ["December", "Willow"]
+        };
+
+        let tbody = $('#all-cards tbody');
+        //console.log(tbody);
+
+        for (let monthNumber in months) {
+            let monthName = months[monthNumber][0];
+            let monthPlant = months[monthNumber][1];
+
+            let tr = `<tr>
+                        <td>${monthName}</td>
+                        <td>${monthPlant}</td>
+                        <td>
+                            <img class="hwatu-img-table" src="assets/converted/_${monthNumber}_1.svg">
+                            <img class="hwatu-img-table" src="assets/converted/_${monthNumber}_2.svg">
+                            <img class="hwatu-img-table" src="assets/converted/_${monthNumber}_3.svg">
+                            <img class="hwatu-img-table" src="assets/converted/_${monthNumber}_4.svg">
+                        </td>
+                        </tr>`;
+            tbody.append(tr);
+        }
+
+       
+    });
+</script>
+
+</html>
