@@ -36,7 +36,6 @@
                 <a href="game-winning.html" class="list-group-item list-group-item-action bg-light bar-active">Winning</a>
                 <a href="game-scoring.html" class="list-group-item list-group-item-action bg-light">Scoring</a>
                 <a href="additional-rules.html" class="list-group-item list-group-item-action bg-light">Additional Rules & 3+ Player Rules</a>
-
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -67,11 +66,18 @@
                         </p>
         
                         <hr>
-
                             
                             <p>If the player reaches the required minimum number of points, then they can take one of the following actions</p>
-                            <ol start="a">
-                                <li>Call "Go": The player decides to continue the game, allowing the next player to execute their turn.</li>
+                            <ol type="a">
+                                <li>Call "Go": The player decides to continue the game, allowing the next player to
+                                execute their turn.
+                                    <ul>
+                                        <li>It is important to note that to be able
+                                        to call "Go" again in the next turn, the player must have had their points
+                                        <span class="text-italicize">increased</span> from the previous turn which they
+                                        called "Go."</li>
+                                    </ul>
+                                </li>
                                 <li>Call "Stop": The player decides to end the game. Score is calculated and winnings are collected. The winning player becomes the dealer of the next game.</li>
                             </ol>
 
