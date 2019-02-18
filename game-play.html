@@ -28,12 +28,14 @@
                     <div class="list-group list-group-flush">
                         <a href="game-objective.html" class="list-group-item list-group-item-action bg-light">Objective</a>
                         <a href="card-description.html" class="list-group-item list-group-item-action bg-light">Card Description</a>
-                        <a href="game-setup.html" class="list-group-item list-group-item-action bg-light">Setup</a>
+                        <a href="game-setup.html" class="list-group-item list-group-item-action bg-light">Game Setup</a>
                         <a href="game-play.html" class="list-group-item list-group-item-action bg-light
                         bar-active">Gameplay</a>
-                        <a href="game-special-events.html" class="list-group-item list-group-item-action bg-light">Special Events</a>
+                        <a href="game-special-events.html" class="list-group-item list-group-item-action
+                        bg-light">Special Events</a>
+                        <a href="game-winning.html" class="list-group-item list-group-item-action bg-light">Winning</a>
                         <a href="game-scoring.html" class="list-group-item list-group-item-action bg-light">Scoring</a>
-                        <a href="#" class="list-group-item list-group-item-action bg-light">Special Rules</a>
+                        <a href="additional-rules.html" class="list-group-item list-group-item-action bg-light">Additional Rules & 3+ Player Rules</a>
                     </div>
                 </div>
                 <!-- /#sidebar-wrapper -->
@@ -51,9 +53,13 @@
                                 <h3 class="card-title page-heading">Gameplay</h3>
                                 <hr>
                                 <div class="card-body">
-                    
+                                    <p>The objective of the game is to score at least the minimum number of points. </p>
+                                    <ul>
+                                        <li>2 Players: minimum 7 points</li>
+                                        <li>3+ Players: minimum 3 points</li>
+                                    </ul>
                                     <p>
-                                        The goal is to maximze the number of points, which are described in detail in the scoring
+                                        The ultimate goal is to maximze the number of points, which are described in detail in the scoring
                                         section below. To maxmize the number of points, the player needs to collect the cards. How a player
                                         collects cards is described immediately below.
                                     </p>
@@ -129,16 +135,16 @@
                                     </div>
                                     
                                     <div class="d-flex flex-row mb-6">
-                                            <div class="container">
-                                                <h5 id="collectSectionHeading">COLLECTING</h5>
-                                                <p id="collectSectionDesc">
-                                                        <ul>
-                                                            <li>Check for any <a href="game-special-events">SPECIAL EVENTS</a>.</li>
-                                                            <li>If there’s a match from the flipped card and the floor card, the player collects those pair of cards along with the matching card pair from their hand (if any) from the first step. Otherwise, the flipped card remains on the floor.</li>
-                                                            <li><span class="text-italicize">[Optional] With joker</span>: If a joker was flipped, the player will also take their joker to their collection pile.</li>
-                                                        </ul>
-                                                </p>
-                                            </div>
+                                        <div class="container">
+                                            <h5 id="collectSectionHeading">COLLECTING</h5>
+                                            <p id="collectSectionDesc">
+                                                    <ul>
+                                                        <li>Check for any <a href="game-special-events">SPECIAL EVENTS</a>.</li>
+                                                        <li>If there’s a match from the flipped card and the floor card, the player collects those pair of cards along with the matching card pair from their hand (if any) from the first step. Otherwise, the flipped card remains on the floor.</li>
+                                                        <li><span class="text-italicize">[Optional] With joker</span>: If a joker was flipped, the player will also take their joker to their collection pile.</li>
+                                                    </ul>
+                                            </p>
+                                        </div>
 
                                     </div>
                     
@@ -147,64 +153,62 @@
 
                                     <!-- sometimes section -->
                                     <a class="section-heading-click" data-toggle="collapse" role="button" href="#additionalStepsSection" aria-expanded="false" aria-controls="additionalStepsSection">
-                                            <div class="d-flex flex-row section-row">
-                                                <div class="p-2"><h5 class="card-subtitle section-heading">(Sometimes) Additional Steps</h5></div>
-                                                <div class="p-2 ml-auto">
-                                                    <i class="fas fa-chevron-circle-down fa-2x"></i>
-                                                </div>
+                                        <div class="d-flex flex-row section-row">
+                                            <div class="p-2"><h5 class="card-subtitle section-heading">(Sometimes)
+                                            Additional Step</h5></div>
+                                            <div class="p-2 ml-auto">
+                                                <i class="fas fa-chevron-circle-down fa-2x"></i>
                                             </div>
-                                        </a>
+                                        </div>
+                                    </a>
                         
-                                        <div class="collapse p-2" id="additionalStepsSection">
-                                                <div class="container">
-                                                        <h5>(SOMTIMES) EXTORTING</h5>
-                                                            <ul>
-                                                                <li>The player may extort one or more of the opponent's pi cards if one or a combination of the below special events occur:</li>
-                                                                <ul>
-                                                                    <li>After placing a bomb</li>
-                                                                    <li>Collecting ppuk</li>
-                                                                    <li>Collecting ja-ppuk</li>
-                                                                    <li>Sseul</li>
-                                                                    <li>Ttadak</li>
-                                                                    <li>Jjok</li>
-                                                                </ul>
-                                                                <br>
-                                                                <p><span class="text-italicize">Special Notes</span>: 
-                                                                    <ul>
-                                                                        <li>If a combination of above events to occur, the number of cards to extort will accumulate.</li>
-                                                                        <li>If the opponent player does not have no or too few pi cards, the current player will only extort however many pi cards that the opponent has at the time.</li>
-                                                                        <li>There is no sense of giving "change." If the current player is to extort one pi but if the opponent has one ssangpi, the current player will still extort the ssangpi without giving one pi back.</li>
-                                                                    </ul>
-                            
-                                                                </p>
-                            
-                            
-                                                            </ul>
-                                                    </div>
+                                    <div class="collapse p-2" id="additionalStepsSection">
+                                        <div class="container">
+                                            <h5>(SOMTIMES) EXTORTING</h5>
+                                                <ul>
+                                                    <li>The player may extort one or more of the opponent's pi cards if
+                                                    one or a combination of the below <a href="game-special-events.html">special events</a> occur:</li>
+                                                    <ul>
+                                                        <li>After placing a bomb</li>
+                                                        <li>Collecting ppuk</li>
+                                                        <li>Collecting ja-ppuk</li>
+                                                        <li>Sseul</li>
+                                                        <li>Ttadak</li>
+                                                        <li>Jjok</li>
+                                                    </ul>
+                                                    
                                                     <br>
-                                            <div class="container">
-                                                <h5>(SOMETIMES) CALLING "GO" OR "STOP"</h5>
+                                                    <a href="game-special-events.html" class="btn btn-info"
+                                                   role="button">LEARN MORE ABOUT SPECIAL EVENTS </a>
+                                                   <br><br>
+                                                    <p><span class="text-italicize">Special Notes</span>: 
                                                         <ul>
-                                                            <li>If the player reaches the required minimum number of points, then they can take one of the following actions</li>
-                                                            <ol start="a">
-                                                                <li>Call "Go": The player decides to continue the game, allowing the next player to execute their turn.</li>
-                                                                <li>Call "Stop": The player decides to end the game. Score is calculated and winnings are collected. The winning player becomes the dealer of the next game.</li>
-                                                            </ol>
-                                                            <br>
-                                                            <p><span class="text-italicize">Special Notes</span>: 
-                                                                <ul>
-                                                                    <li>Upon winning, calling "Go" is the only way to increase the winnings for the current game, but it is risky in that the other players may steal the victory.</li>
-                                                                </ul>
-                        
-                                                            </p>
-                        
+                                                            <li>If a combination of above events to occur, the number of cards to extort will accumulate.</li>
+                                                            <li>If the opponent player does not have no or too few pi cards, the current player will only extort however many pi cards that the opponent has at the time.</li>
+                                                            <li>There is no sense of giving "change." If the current player is to extort one pi but if the opponent has one ssangpi, the current player will still extort the ssangpi without giving one pi back.</li>
                                                         </ul>
-                                                    </div>
+                                                    </p>
+                
+                
+                                                </ul>
+                                        </div>
 
-                        
-                                            <br>
-                                            
-                                        </div>                    
+                                        
+                                        
+                                    </div>
+                                    <br>
+                                    <!-- <div class="d-flex flex-row mb-6">
+                                        <div class="container">
+                                            <h5 id="winningSectionHeading">WINNING AND ENDING THE GAME</h5>
+                                            <p id="winningSectionDesc">
+                                                <ul>
+                                                    <li>The player is declared as a winner if their current point is
+                                                    above the minimum threshold and has called "Stop" (see the
+                                                    "Additional Steps" section above for more details).</li>
+                                                </ul>
+                                            </p>
+                                        </div>
+                                    </div> -->
                     
                                     <hr>
                     

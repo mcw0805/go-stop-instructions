@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title></title>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/sidebarStyle.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+
+</head>
+
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading">Contents</div>
+            <div class="list-group list-group-flush">
+                <a href="game-objective.html" class="list-group-item list-group-item-action bg-light">Objective</a>
+                <a href="card-description.html" class="list-group-item list-group-item-action bg-light">Card Description</a>
+                <a href="game-setup.html" class="list-group-item list-group-item-action bg-light">Game Setup</a>
+                <a href="game-play.html" class="list-group-item list-group-item-action bg-light">Gameplay</a>
+                <a href="game-special-events.html" class="list-group-item list-group-item-action bg-light">Special Events</a>
+                <a href="game-winning.html" class="list-group-item list-group-item-action bg-light bar-active">Winning</a>
+                <a href="game-scoring.html" class="list-group-item list-group-item-action bg-light">Scoring</a>
+                <a href="additional-rules.html" class="list-group-item list-group-item-action bg-light">Additional Rules & 3+ Player Rules</a>
+
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <a class="site-header" href="home.html" ><h2 id="menu-toggle">The Game of Go-Stop</h2></a>
+            </nav>
+            <br>
+
+            <div class="container">
+
+                <div class="card">
+                    <h3 class="card-title page-heading"><i class="fas fa-trophy"></i>  Winning: Calling "GO" or "STOP"</h3>
+                    <hr>
+        
+                    <div class="card-body">
+                        <p><span class="text-bold">To refresh, the player needs to score least the minimum amount of predetermined
+                        points to win the game.</p>
+                        <p>
+                            <ul>
+                                <li>2 Players: minimum 7 points</li>
+                                <li>3+ Players: minimum 3 points</li>
+                            </ul>
+        
+                        </p>
+        
+                        <hr>
+
+                            
+                            <p>If the player reaches the required minimum number of points, then they can take one of the following actions</p>
+                            <ol start="a">
+                                <li>Call "Go": The player decides to continue the game, allowing the next player to execute their turn.</li>
+                                <li>Call "Stop": The player decides to end the game. Score is calculated and winnings are collected. The winning player becomes the dealer of the next game.</li>
+                            </ol>
+
+                            <p><span class="text-italicize">Special Notes</span>: 
+                                <ul>
+                                    <li>If winning player has exhaused their hand cards, the game is an automatic
+                                    "Stop". This player cannot call "Go"
+                                    even if the opponent players still have cards in their hands.</li>
+
+                                    <li>Upon winning, calling "Go" is the only way to increase the winnings for the current game, but it is risky in that the other players may steal the victory.</li>
+                                </ul>
+                            </p>
+
+                
+                            <h5 class="card-title">Automatic Winning</h5>
+                            <p>The game can also be ended without ever calling "Go" or "Stop." These special
+                            circumstances are listed below: </p>
+                            <ul>
+                                <li>President
+                                    <ul>
+                                        <li>Immediately after the dealer finishes dealing, if a player has all four of the month cards, that player may decide to call out “president,” which will lead to automatic win with the minimum points. However, the player can choose to remain silent and use three of the cards as bomb after discarding one.
+                                            </li>
+                                            <li>If the floor cards contain all four month cards before anyone’s first turn of the game, it is an automatic win for the dealer with the minimum points.
+                                                </li>
+                                    </ul>
+                                </li>
+                                <br>
+                                <li>3 Ppuk
+                                    <ul>
+                                        <li>If one player makes three ppuks in the game, it is an automatic win for that player with the minimum points.</li>
+                                    </ul>
+                                </li>
+                                
+                            </ul>
+
+                            <h5 class="card-title">Tie</h5>
+                            <p>It is rare, but it is possible that none of the players will score the minimum points
+                            until all players have exhausted their hand cards and the remaining deck is emptied. 
+                                This scenario is called <span class="text-italicize text-bold">nagari (나가리)</span>.
+                                </p>
+                                <p>If there is no winner, another game is played (with the previous winner dealing);
+                                however, the next game's winner gets to double their points.  </p>
+
+                
+                        <hr>
+        
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+
+
+</body>
+
+</html>
