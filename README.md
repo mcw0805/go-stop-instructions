@@ -10,3 +10,5 @@ https://tinyurl.com/y5qtgnux
 
 The images (SVGs created from d3) will render best in Google Chrome!!!!! I hope to figure out how to make the images
 more friendly for other browsers.
+
+<img src="https://github.com/mcw0805/go-stop-instructions/blob/master/assets/ppukCollection.gif" />
